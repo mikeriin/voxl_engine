@@ -1,0 +1,199 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "voxl/voxl.lib"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_library",
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"external/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"voxl/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 653,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"compileDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		}
+	],
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "E:/Projects/voxl_engine/voxl/include"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "voxl::@9f81538e4292b1141110",
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"fragment" : "opengl32"
+		}
+	],
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"fragment" : "opengl32"
+		}
+	],
+	"name" : "voxl",
+	"nameOnDisk" : "voxl.lib",
+	"paths" : 
+	{
+		"build" : "voxl",
+		"source" : "voxl"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/voxl.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

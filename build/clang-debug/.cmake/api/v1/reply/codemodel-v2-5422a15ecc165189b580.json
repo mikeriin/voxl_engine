@@ -1,0 +1,146 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "EnTT::EnTT::@9f81538e4292b1141110",
+					"jsonFile" : "target-EnTT__EnTT-Debug-cced700979bf390317c8.json",
+					"name" : "EnTT::EnTT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3::Headers::@9f81538e4292b1141110",
+					"jsonFile" : "target-SDL3__Headers-Debug-bcc9704a4732566d90c6.json",
+					"name" : "SDL3::Headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110",
+					"jsonFile" : "target-SDL3__SDL3-shared-Debug-90b20e0cd1e45d31dff4.json",
+					"name" : "SDL3::SDL3-shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "glad::glad::@9f81538e4292b1141110",
+					"jsonFile" : "target-glad__glad-Debug-2090e397a0ed21dc8830.json",
+					"name" : "glad::glad",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"build" : "voxl",
+					"jsonFile" : "directory-voxl-Debug-5788cdad37db1918e43a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "voxl",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "applications",
+					"jsonFile" : "directory-applications-Debug-fba0b280b1cafb13ef10.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "applications",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "voxl_superproject",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "sandbox::@b122ace3dc882242dbb5",
+					"jsonFile" : "target-sandbox-Debug-ddaf7134e2747eb30546.json",
+					"name" : "sandbox",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "voxl::@9f81538e4292b1141110",
+					"jsonFile" : "target-voxl-Debug-c71f5d4e670d58a93e36.json",
+					"name" : "voxl",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Projects/voxl_engine/build/clang-debug",
+		"source" : "E:/Projects/voxl_engine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

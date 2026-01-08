@@ -1,0 +1,9 @@
+{
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": true,
+
+  // clangd lit compile_commands.json (généré par CMake_EXPORT_COMPILE_COMMANDS)
+  "clangd.arguments": [
+    "--compile-commands-dir=build/clang-debug"
+  ]
+}

@@ -1,0 +1,8 @@
+E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/edit_cache.dir
+E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/rebuild_cache.dir
+E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir
+E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/edit_cache.dir
+E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/rebuild_cache.dir
+E:/Projects/voxl_engine/build/clang-debug/applications/CMakeFiles/sandbox.dir
+E:/Projects/voxl_engine/build/clang-debug/applications/CMakeFiles/edit_cache.dir
+E:/Projects/voxl_engine/build/clang-debug/applications/CMakeFiles/rebuild_cache.dir

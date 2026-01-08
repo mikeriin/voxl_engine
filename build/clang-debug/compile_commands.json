@@ -1,0 +1,14 @@
+[
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\voxl.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\voxl.cpp",
+  "file": "E:/Projects/voxl_engine/voxl/src/voxl.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o applications\\CMakeFiles\\sandbox.dir\\sandbox\\main.cpp.obj -c E:\\Projects\\voxl_engine\\applications\\sandbox\\main.cpp",
+  "file": "E:/Projects/voxl_engine/applications/sandbox/main.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj"
+}
+]

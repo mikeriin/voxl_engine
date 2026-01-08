@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

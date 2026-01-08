@@ -1,0 +1,5 @@
+# ninja log v7
+3	79	7895417187322640	voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj	1e5a9a17b1153394
+80	8189	7895417188085537	voxl/voxl.lib	41dfbb13522549d9
+14	798	7895417997431508	applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj	dbe49900de6d81a7
+800	1411	7895418005291574	applications/sandbox.exe	aacb837fca8856ec
