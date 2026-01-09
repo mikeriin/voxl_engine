@@ -5,6 +5,7 @@
   "dependencies": [
     "sdl3",
     "entt",
-    "glad"
+    "glad",
+    "glm"
   ]
 }

@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "C:/Program Files/LLVM/bin/clang++.exe")
+set(CMAKE_CXX_COMPILER "C:/Program Files/LLVM/bin/clang.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "Clang")
 set(CMAKE_CXX_COMPILER_VERSION "21.1.7")

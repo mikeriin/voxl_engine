@@ -1,21 +1,26 @@
 add_library(voxl STATIC)
 
-target_sources(voxl PRIVATE
-  src/voxl.cpp
+file(GLOB_RECURSE VOXL_SOURCES CONFIGURE_DEPENDS
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
-target_include_directories(voxl PUBLIC
-  ${CMAKE_CURRENT_SOURCE_DIR}/include
+target_sources(voxl PRIVATE ${VOXL_SOURCES})
+
+target_include_directories(voxl 
+  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/interne
 )
 
 # Deps externes via vcpkg:
 find_package(SDL3 CONFIG REQUIRED)
 find_package(EnTT CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
 target_link_libraries(voxl PUBLIC
   SDL3::SDL3
   EnTT::EnTT
   glad::glad
+  glm::glm
   opengl32
 )

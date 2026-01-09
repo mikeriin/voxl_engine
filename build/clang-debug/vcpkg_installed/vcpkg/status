@@ -55,6 +55,15 @@ Multi-Arch: same
 Description: Generate loader logic.
 Status: install ok installed
 
+Package: glm
+Version: 1.0.3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ff50cb6e661c66d9ce2dfa3b76ab09cda93d8e71b3b7e76b7d58bcf0c7259fe0
+Description: OpenGL Mathematics (GLM)
+Status: install ok installed
+
 Package: sdl3
 Version: 3.4.0
 Depends: vcpkg-cmake, vcpkg-cmake-config

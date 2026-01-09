@@ -1,5 +1,13 @@
 # ninja log v7
-3	79	7895417187322640	voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj	1e5a9a17b1153394
-80	8189	7895417188085537	voxl/voxl.lib	41dfbb13522549d9
-14	798	7895417997431508	applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj	dbe49900de6d81a7
-800	1411	7895418005291574	applications/sandbox.exe	aacb837fca8856ec
+18	36	7896232471482168	E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs	5ec5b94d831a5100
+24	777	7896196774041889	voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj	1f9ec5955dcb1f9b
+38	1258	7896232471679199	applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj	47a8dd6ddd7585a5
+36	1288	7896232246516186	voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj	d9545f749d8ddd0c
+1288	1355	7896232259039833	voxl/voxl.lib	cc89e9f2c2725937
+1258	1735	7896232483884968	applications/sandbox.exe	fcede49dc96d91bc
+39	2684	7896233094001445	build.ninja	98e672f39dab9091
+39	2684	7896233093932418	E:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake	98e672f39dab9091
+39	2684	7896233093959926	E:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake	98e672f39dab9091
+39	2684	7896233093973054	E:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake	98e672f39dab9091
+38	464	7896232246544778	voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj	c7b9903868cf9c7f
+54	1013	7896230985055636	voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj	4bc425feb1f52349

@@ -18,7 +18,7 @@
 #############################################
 # Minimal version of Ninja required by this file
 
-ninja_required_version = 1.5
+ninja_required_version = 1.8
 
 
 #############################################
@@ -78,13 +78,46 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_voxl: phony || .
 
-build voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/voxl.cpp || cmake_object_order_depends_target_voxl
+build voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/application.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
-  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\voxl.cpp.obj.d
-  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\application.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
-  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\layer_stack.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/timestep.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\timestep.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/sdl3/SDL3Window.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\platform\sdl3\SDL3Window.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\platform\sdl3
   TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
   TARGET_PDB = voxl\voxl.pdb
   TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
@@ -97,7 +130,7 @@ build voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj: CXX_COMPILER__voxl_unscanned_De
 #############################################
 # Link the static library voxl\voxl.lib
 
-build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/voxl.cpp.obj
+build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
@@ -149,7 +182,7 @@ build cmake_object_order_depends_target_sandbox: phony || cmake_object_order_dep
 build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sandbox_unscanned_Debug E$:/Projects/voxl_engine/applications/sandbox/main.cpp || cmake_object_order_depends_target_sandbox
   CONFIG = Debug
   DEP_FILE = applications\CMakeFiles\sandbox.dir\sandbox\main.cpp.obj.d
-  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   INCLUDES = -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
   OBJECT_FILE_DIR = applications\CMakeFiles\sandbox.dir\sandbox
@@ -165,11 +198,11 @@ build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sa
 #############################################
 # Link the executable applications\sandbox.exe
 
-build applications/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib vcpkg_installed/x64-windows/debug/lib/glad.lib || voxl/voxl.lib
+build applications/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib vcpkg_installed/x64-windows/debug/lib/glad.lib vcpkg_installed/x64-windows/debug/lib/glm.lib || voxl/voxl.lib
   CONFIG = Debug
   FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   LINK_FLAGS = -Xlinker /subsystem:console -fuse-ld=lld-link
-  LINK_LIBRARIES = voxl/voxl.lib  vcpkg_installed/x64-windows/debug/lib/SDL3.lib  vcpkg_installed/x64-windows/debug/lib/glad.lib  -lopengl32.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
+  LINK_LIBRARIES = voxl/voxl.lib  vcpkg_installed/x64-windows/debug/lib/SDL3.lib  vcpkg_installed/x64-windows/debug/lib/glad.lib  vcpkg_installed/x64-windows/debug/lib/glm.lib  -lopengl32.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
   POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Projects/voxl_engine/build/clang-debug/applications/sandbox.exe -installedDir E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
@@ -243,16 +276,30 @@ build voxl/all: phony voxl/voxl.lib
 
 
 #############################################
+# Phony target to force glob verification run.
+
+build E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake_force: phony
+
+
+#############################################
+# Re-run CMake to check if globbed directories changed.
+
+build E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake_force
+  pool = console
+  restat = 1
+
+
+#############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja E$:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake
+build build.ninja E$:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake: RERUN_CMAKE E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs | C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake: phony
 
 
 #############################################
