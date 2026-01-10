@@ -1,3 +1,6 @@
 [submodule "external/vcpkg"]
 	path = external/vcpkg
 	url = https://github.com/microsoft/vcpkg
+[submodule "external/FastNoise2"]
+	path = external/FastNoise2
+	url = https://github.com/Auburn/FastNoise2
