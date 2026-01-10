@@ -1,0 +1,144 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"external/FastNoise2/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 115,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 130,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/FastNoise2/src/FastNoiseD.lib"
+			],
+			"targetId" : "FastNoise::@82bdf66e7a13f7a5aeda",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/FastNoise",
+			"paths" : 
+			[
+				"external/FastNoise2/src/../include/FastNoise/FastNoise.h",
+				"external/FastNoise2/src/../include/FastNoise/FastNoise_C.h",
+				"external/FastNoise2/src/../include/FastNoise/Metadata.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include/FastNoise/Generators",
+			"paths" : 
+			[
+				"external/FastNoise2/src/../include/FastNoise/Generators/BasicGenerators.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Blends.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Cellular.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/DomainWarp.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/DomainWarpFractal.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/DomainWarpSimplex.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Fractal.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Generator.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Modifiers.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Perlin.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Simplex.h",
+				"external/FastNoise2/src/../include/FastNoise/Generators/Value.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/FastNoise2",
+			"paths" : 
+			[
+				"build/clang-debug/_deps/FastNoise2/generated/FastNoise2Config.cmake",
+				"build/clang-debug/_deps/FastNoise2/generated/FastNoise2ConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/FastNoise2",
+			"exportName" : "FastNoise2Targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "FastNoise::@82bdf66e7a13f7a5aeda",
+					"index" : 0
+				},
+				{
+					"id" : "FastSIMD::@6a824029d8a23c0cb0e8",
+					"index" : 1
+				},
+				{
+					"id" : "FastSIMD_FastNoise::@82bdf66e7a13f7a5aeda",
+					"index" : 2
+				}
+			],
+			"paths" : 
+			[
+				"_deps/FastNoise2/CMakeFiles/Export/685b7b2fe36c8f3a2e6ec6f0a6279b14/FastNoise2Targets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/FastNoise2",
+		"source" : "external/FastNoise2"
+	}
+}

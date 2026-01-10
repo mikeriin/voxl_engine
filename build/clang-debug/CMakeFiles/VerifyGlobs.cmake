@@ -5,9 +5,12 @@
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Projects/voxl_engine/voxl/src/*.cpp")
 set(OLD_GLOB
   "E:/Projects/voxl_engine/voxl/src/core/application.cpp"
+  "E:/Projects/voxl_engine/voxl/src/core/input.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp"
+  "E:/Projects/voxl_engine/voxl/src/core/resource_manager.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/timestep.cpp"
-  "E:/Projects/voxl_engine/voxl/src/platform/sdl3/SDL3Window.cpp"
+  "E:/Projects/voxl_engine/voxl/src/platform/gl/GLRenderer.cpp"
+  "E:/Projects/voxl_engine/voxl/src/platform/sdl/SDLWindow.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

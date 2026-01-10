@@ -5,23 +5,32 @@
 #include <print>
 
 #include "application.h"
+#include "keyboard.h"
 #include "layer.h"
+#include "shader_program.h"
 
 
 class SandboxLayer: public voxl::Layer {
 public:
-  void OnAttach(voxl::Application& app) override { _pApp = &app; }
+  void OnAttach(voxl::AppContext& ctx) override { 
+    _pCtx = &ctx;
+    _pCtx->pWindow->Resize(800, 600);
+    _pCtx->pResManager->Load<voxl::ShaderProgram>("sh_glob", "vert", "frag");
+    _pCtx->pResManager->LoadOrGet<voxl::ShaderProgram>("sh_glob", "vert", "frag");
+  }
 
   void OnUpdate(double dt, double alpha) override {
-    std::println("dt: {} \t\t\t {}", dt, alpha);
+
   }
 
   void OnFixedUpdate(double fixed_dt) override {
-    std::println("FixedUpdate.");
+    if (_pCtx->pInput->IsKeyPressed(voxl::SCANCODE_Z)) std::println("Z Pressed.");
+    if (_pCtx->pInput->IsKeyHeld(voxl::SCANCODE_Z)) std::println("Z Held.");
+    if (_pCtx->pInput->IsKeyReleased(voxl::SCANCODE_Z)) std::println("Z Released.");
   }
 
 private:
-  voxl::Application* _pApp;
+  voxl::AppContext* _pCtx;
 };
 
 

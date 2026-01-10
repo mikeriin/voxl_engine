@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

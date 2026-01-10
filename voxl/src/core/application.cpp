@@ -1,10 +1,12 @@
 #include "application.h"
 
 
+#include <memory>
 #include <print>
 #include <utility>
 
-#include "SDL3Window.h"
+#include "SDLWindow.h"
+#include "GLRenderer.h"
 #include "event.h"
 #include "timestep.h"
 
@@ -14,38 +16,45 @@ double voxl::Timestep::FixedDeltaTime = 0.0;
 
 
 // TODO permettre de choisir l'implémentation en dehors de la lib
-std::unique_ptr<voxl::IWindow> CreateWindow(const voxl::WindowDesc& desc) { return std::make_unique<voxl::SDL3Window>(desc); }
+std::unique_ptr<voxl::IWindow> CreateWindow(const voxl::WindowDesc& desc) { return std::make_unique<voxl::SDLWindow>(desc); }
+std::unique_ptr<voxl::IRenderer> CreateRenderer(voxl::IWindow* window) { return std::make_unique<voxl::GLRenderer>(window); }
 
 
 namespace voxl {
 
+
 Application::Application(const voxl::WindowDesc &desc)
-  : _pWindow(CreateWindow(desc))
+  : _pWindow(CreateWindow(desc)),
+    _pRenderer(CreateRenderer(_pWindow.get()))
   {
     if (!_pWindow) _running = false;
     _pWindow->SetEventCallback([this](Event& e) { onEvent(e); });
+    if (!_pRenderer) std::println("Failed to create renderer.");
 
     _timestep.SetFixedDeltaTime(1.0 / 60.0); // 60 mise à jours par secondes ~ 60fps
 
     _context.pWindow = _pWindow.get();
+    _context.pRenderer = _pRenderer.get();
     _context.pTimestep = &_timestep;
     _context.pLayerStack = &_layerStack;
+    _context.pInput = &_input;
+    _context.pResManager = &_resManager;
   }
 
 
 void Application::Run() {
-  double fixedTimer = 0.0;
+  double fixed_timer = 0.0;
   while (_running) {
     _pWindow->PollEvents();
     
     _timestep.Update();
-    fixedTimer += Timestep::DeltaTime;
+    fixed_timer += Timestep::DeltaTime;
 
     constexpr int MAX_STEP_COUNT = 8;
     int steps = 0;
-    while (fixedTimer >= Timestep::FixedDeltaTime && ++steps < MAX_STEP_COUNT) {
+    while (fixed_timer >= Timestep::FixedDeltaTime && ++steps < MAX_STEP_COUNT) {
       for (auto it = _layerStack.Begin(); it != _layerStack.End(); it++) (*it)->OnFixedUpdate(Timestep::FixedDeltaTime);
-      fixedTimer -= Timestep::FixedDeltaTime;
+      fixed_timer -= Timestep::FixedDeltaTime;
     }
 
     /*
@@ -54,14 +63,12 @@ void Application::Run() {
     double alpha = accumulator / FixedDeltaTime;
     auto renderPos = prevPos + (currPos - prevPos) * alpha;
     */
-    double alpha = fixedTimer / Timestep::FixedDeltaTime;
+    double alpha = fixed_timer / Timestep::FixedDeltaTime;
     for (auto it = _layerStack.Begin(); it != _layerStack.End(); it++) (*it)->OnUpdate(Timestep::DeltaTime, alpha);
 
-    // renderer.beginFrame()
+    _pRenderer->BeginFrame();
     for (auto it = _layerStack.Begin(); it != _layerStack.End(); it++) (*it)->OnRender();
-    // renderer.endFrame()
-
-    _pWindow->SwapBuffers();
+    _pRenderer->EndFrame();
   }
 }
 
@@ -72,13 +79,13 @@ void Application::Close() {
 
 
 void Application::PushLayer(std::unique_ptr<Layer> layer) {
-  layer->OnAttach(*this);
+  layer->OnAttach(this->_context);
   _layerStack.PushLayer(std::move(layer));
 }
 
 
 void Application::PushOverlay(std::unique_ptr<Layer> overlay) {
-  overlay->OnAttach(*this);
+  overlay->OnAttach(this->_context);
   _layerStack.PushOverlay(std::move(overlay));
 }
 
@@ -91,8 +98,8 @@ void Application::onEvent(Event& e) {
   }
 
   if (e.type == EventType::WindowResize) {
-    auto& windowResizeEvent = static_cast<WindowResizeEvent&>(e);
-    std::println("Window resized[%d, %d]", windowResizeEvent.width, windowResizeEvent.height);
+    auto& window_resize_event = static_cast<WindowResizeEvent&>(e);
+    std::println("Window resized[{}, {}]", window_resize_event.width, window_resize_event.height);
   }
 
   // on traverse les layers dans le sens inverse, la couche la plus haute a la priorité
@@ -100,6 +107,8 @@ void Application::onEvent(Event& e) {
     (*it)->OnEvent(e);
     if (e.handled) break;
   }
+
+  if (e.type == EventType::KeyPressed || e.type == EventType::KeyReleased) _input.ProcessEvent(e);
 }
 
 

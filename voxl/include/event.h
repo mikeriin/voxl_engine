@@ -11,9 +11,8 @@ enum class EventType: uint16_t {
   None,
   WindowClose,
   WindowResize,
-  KeyDown,
-  KeyHeld,
-  KeyUp,
+  KeyPressed,
+  KeyReleased,
   MouseMotion,
 };
 
@@ -44,12 +43,34 @@ struct WindowResizeEvent: Event {
 
 
 struct KeyEvent: Event {
+  int scancode = 0;
   int key = 0;
+  uint16_t keymods = 0;
+  bool repeat = false;
   
-  KeyEvent(EventType t, int k)
-    : key(k)
+  KeyEvent(int sc, int k, uint16_t km, bool r)
+    : scancode(sc),
+      key(k),
+      keymods(km),
+      repeat(r)
+    { }
+};
+
+
+struct KeyPressedEvent final: KeyEvent {
+  KeyPressedEvent(int sc, int k, uint16_t km, bool r)
+    : KeyEvent(sc, k, km, r)
     {
-      type = t;
+      type = EventType::KeyPressed;
+    }
+};
+
+
+struct KeyReleasedEvent final: KeyEvent {
+  KeyReleasedEvent(int sc, int k, uint16_t km)
+    : KeyEvent(sc, k, km, false)
+    {
+      type = EventType::KeyReleased;
     }
 };
 

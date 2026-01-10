@@ -64,6 +64,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # E:/Projects/voxl_engine/CMakeLists.txt
@@ -76,13 +118,26 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for voxl
 
-build cmake_object_order_depends_target_voxl: phony || .
+build cmake_object_order_depends_target_voxl: phony || cmake_object_order_depends_target_FastNoise cmake_object_order_depends_target_FastSIMD cmake_object_order_depends_target_FastSIMD_FastNoise
 
 build voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/application.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
   DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\application.cpp.obj.d
   FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/core/input.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/input.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\input.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
   OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
   TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
@@ -91,9 +146,22 @@ build voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj: CXX_COMPILER__voxl_
 
 build voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
   DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\layer_stack.cpp.obj.d
   FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/core/resource_manager.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/resource_manager.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\resource_manager.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
   OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
   TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
@@ -102,22 +170,36 @@ build voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj: CXX_COMPILER__voxl_
 
 build voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/core/timestep.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
   DEP_FILE = voxl\CMakeFiles\voxl.dir\src\core\timestep.cpp.obj.d
   FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
   OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\core
   TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
   TARGET_PDB = voxl\voxl.pdb
   TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
 
-build voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/sdl3/SDL3Window.cpp || cmake_object_order_depends_target_voxl
+build voxl/CMakeFiles/voxl.dir/src/platform/gl/GLRenderer.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/gl/GLRenderer.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
-  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\platform\sdl3\SDL3Window.cpp.obj.d
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\platform\gl\GLRenderer.cpp.obj.d
   FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
-  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\platform\sdl3
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\platform\gl
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
+build voxl/CMakeFiles/voxl.dir/src/platform/sdl/SDLWindow.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/sdl/SDLWindow.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\platform\sdl\SDLWindow.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\platform\sdl
   TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
   TARGET_PDB = voxl\voxl.pdb
   TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
@@ -130,7 +212,7 @@ build voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj: CXX_COMPILE
 #############################################
 # Link the static library voxl\voxl.lib
 
-build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj
+build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/input.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/resource_manager.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/GLRenderer.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/sdl/SDLWindow.cpp.obj || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir
@@ -165,6 +247,488 @@ build voxl/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build voxl/rebuild_cache: phony voxl/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build voxl/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build voxl/CMakeFiles/install.util: CUSTOM_COMMAND voxl/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\voxl && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build voxl/install: phony voxl/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build voxl/CMakeFiles/install/local.util: CUSTOM_COMMAND voxl/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\voxl && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build voxl/install/local: phony voxl/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build voxl/CMakeFiles/install/strip.util: CUSTOM_COMMAND voxl/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\voxl && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build voxl/install/strip: phony voxl/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/voxl_engine/voxl/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/FastNoise2/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2 && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/edit_cache: phony _deps/FastNoise2/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/FastNoise2/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2 && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/rebuild_cache: phony _deps/FastNoise2/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/FastNoise2/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/FastNoise2/CMakeFiles/install.util: CUSTOM_COMMAND _deps/FastNoise2/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2 && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/install: phony _deps/FastNoise2/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/FastNoise2/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/FastNoise2/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2 && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/install/local: phony _deps/FastNoise2/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/FastNoise2/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/FastNoise2/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2 && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/install/strip: phony _deps/FastNoise2/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/voxl_engine/external/FastNoise2/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target FastNoise
+
+
+#############################################
+# Order-only phony target for FastNoise
+
+build cmake_object_order_depends_target_FastNoise: phony || cmake_object_order_depends_target_FastSIMD cmake_object_order_depends_target_FastSIMD_FastNoise
+
+build _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/Metadata.cpp.obj: CXX_COMPILER__FastNoise_unscanned_Debug E$:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/Metadata.cpp || cmake_object_order_depends_target_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise\Metadata.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+
+build _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/SmartNode.cpp.obj: CXX_COMPILER__FastNoise_unscanned_Debug E$:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/SmartNode.cpp || cmake_object_order_depends_target_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise\SmartNode.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+
+build _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/FastNoise_C.cpp.obj: CXX_COMPILER__FastNoise_unscanned_Debug E$:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/FastNoise_C.cpp || cmake_object_order_depends_target_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise\FastNoise_C.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir\FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target FastNoise
+
+
+#############################################
+# Link the static library _deps\FastNoise2\src\FastNoiseD.lib
+
+build _deps/FastNoise2/src/FastNoiseD.lib: CXX_STATIC_LIBRARY_LINKER__FastNoise_Debug _deps/fastsimd-build/CMakeFiles/FastSIMD.dir/src/FastSIMD.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/Metadata.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/SmartNode.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/FastNoise_C.cpp.obj || _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_FILE = _deps\FastNoise2\src\FastNoiseD.lib
+  TARGET_PDB = _deps\FastNoise2\src\FastNoiseD.pdb
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastNoise.dir
+
+# =============================================================================
+# Object build statements for OBJECT_LIBRARY target FastSIMD_FastNoise
+
+
+#############################################
+# Order-only phony target for FastSIMD_FastNoise
+
+build cmake_object_order_depends_target_FastSIMD_FastNoise: phony || cmake_object_order_depends_target_FastSIMD
+
+build _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp.obj: CXX_COMPILER__FastSIMD_FastNoise_unscanned_Debug E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp || cmake_object_order_depends_target_FastSIMD_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise\FastSIMD_FastNoise_SSE2.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math
+  INCLUDES = -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+
+build _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp.obj: CXX_COMPILER__FastSIMD_FastNoise_unscanned_Debug E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp || cmake_object_order_depends_target_FastSIMD_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise\FastSIMD_FastNoise_SSE41.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -msse4.1
+  INCLUDES = -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+
+build _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp.obj: CXX_COMPILER__FastSIMD_FastNoise_unscanned_Debug E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp || cmake_object_order_depends_target_FastSIMD_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise\FastSIMD_FastNoise_AVX2.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -mfma -mavx2
+  INCLUDES = -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+
+build _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp.obj: CXX_COMPILER__FastSIMD_FastNoise_unscanned_Debug E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp || cmake_object_order_depends_target_FastSIMD_FastNoise
+  CONFIG = Debug
+  DEFINES = -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise\FastSIMD_FastNoise_AVX512.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -mfma -mavx512f -mavx512dq -mavx512vl -mavx512bw
+  INCLUDES = -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include
+  OBJECT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+  OBJECT_FILE_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\fastsimd\FastSIMD_FastNoise
+  TARGET_COMPILE_PDB = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir\
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = _deps\FastNoise2\src\CMakeFiles\FastSIMD_FastNoise.dir
+
+
+
+#############################################
+# Object library FastSIMD_FastNoise
+
+build _deps/FastNoise2/src/FastSIMD_FastNoise: phony _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp.obj _deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp.obj
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/FastNoise2/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2\src && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/src/edit_cache: phony _deps/FastNoise2/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/FastNoise2/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2\src && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/src/rebuild_cache: phony _deps/FastNoise2/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/FastNoise2/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/FastNoise2/src/CMakeFiles/install.util: CUSTOM_COMMAND _deps/FastNoise2/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2\src && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/src/install: phony _deps/FastNoise2/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/FastNoise2/src/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/FastNoise2/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2\src && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/src/install/local: phony _deps/FastNoise2/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/FastNoise2/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/FastNoise2/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\FastNoise2\src && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/FastNoise2/src/install/strip: phony _deps/FastNoise2/src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/voxl_engine/external/FastNoise2/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for OBJECT_LIBRARY target FastSIMD
+
+
+#############################################
+# Order-only phony target for FastSIMD
+
+build cmake_object_order_depends_target_FastSIMD: phony || .
+
+build _deps/fastsimd-build/CMakeFiles/FastSIMD.dir/src/FastSIMD.cpp.obj: CXX_COMPILER__FastSIMD_unscanned_Debug E$:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/src/FastSIMD.cpp || cmake_object_order_depends_target_FastSIMD
+  CONFIG = Debug
+  DEFINES = -DFASTSIMD_EXPORT -DFASTSIMD_STATIC_LIB
+  DEP_FILE = _deps\fastsimd-build\CMakeFiles\FastSIMD.dir\src\FastSIMD.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include
+  OBJECT_DIR = _deps\fastsimd-build\CMakeFiles\FastSIMD.dir
+  OBJECT_FILE_DIR = _deps\fastsimd-build\CMakeFiles\FastSIMD.dir\src
+  TARGET_COMPILE_PDB = _deps\fastsimd-build\CMakeFiles\FastSIMD.dir\
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = _deps\fastsimd-build\CMakeFiles\FastSIMD.dir
+
+
+
+#############################################
+# Object library FastSIMD
+
+build _deps/fastsimd-build/FastSIMD: phony _deps/fastsimd-build/CMakeFiles/FastSIMD.dir/src/FastSIMD.cpp.obj
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/fastsimd-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/edit_cache: phony _deps/fastsimd-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/fastsimd-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/rebuild_cache: phony _deps/fastsimd-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/fastsimd-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/fastsimd-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/fastsimd-build/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/install: phony _deps/fastsimd-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/fastsimd-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/fastsimd-build/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/install/local: phony _deps/fastsimd-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/fastsimd-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/fastsimd-build/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/install/strip: phony _deps/fastsimd-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/fastsimd-build/dispatch/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build\dispatch && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/dispatch/edit_cache: phony _deps/fastsimd-build/dispatch/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/fastsimd-build/dispatch/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build\dispatch && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\Projects\voxl_engine -BE:\Projects\voxl_engine\build\clang-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/dispatch/rebuild_cache: phony _deps/fastsimd-build/dispatch/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/fastsimd-build/dispatch/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/fastsimd-build/dispatch/CMakeFiles/install.util: CUSTOM_COMMAND _deps/fastsimd-build/dispatch/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build\dispatch && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/dispatch/install: phony _deps/fastsimd-build/dispatch/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/fastsimd-build/dispatch/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/fastsimd-build/dispatch/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build\dispatch && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/dispatch/install/local: phony _deps/fastsimd-build/dispatch/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/fastsimd-build/dispatch/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/fastsimd-build/dispatch/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\_deps\fastsimd-build\dispatch && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/fastsimd-build/dispatch/install/strip: phony _deps/fastsimd-build/dispatch/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # E:/Projects/voxl_engine/CMakeLists.txt
@@ -177,13 +741,14 @@ build voxl/rebuild_cache: phony voxl/CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for sandbox
 
-build cmake_object_order_depends_target_sandbox: phony || cmake_object_order_depends_target_voxl
+build cmake_object_order_depends_target_sandbox: phony || cmake_object_order_depends_target_FastNoise cmake_object_order_depends_target_FastSIMD cmake_object_order_depends_target_FastSIMD_FastNoise cmake_object_order_depends_target_voxl
 
 build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sandbox_unscanned_Debug E$:/Projects/voxl_engine/applications/sandbox/main.cpp || cmake_object_order_depends_target_sandbox
   CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
   DEP_FILE = applications\CMakeFiles\sandbox.dir\sandbox\main.cpp.obj.d
   FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
-  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
   OBJECT_FILE_DIR = applications\CMakeFiles\sandbox.dir\sandbox
   TARGET_COMPILE_PDB = applications\CMakeFiles\sandbox.dir\
@@ -198,11 +763,11 @@ build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sa
 #############################################
 # Link the executable applications\sandbox.exe
 
-build applications/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib vcpkg_installed/x64-windows/debug/lib/glad.lib vcpkg_installed/x64-windows/debug/lib/glm.lib || voxl/voxl.lib
+build applications/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib vcpkg_installed/x64-windows/debug/lib/glad.lib vcpkg_installed/x64-windows/debug/lib/glm.lib _deps/FastNoise2/src/FastNoiseD.lib || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD voxl/voxl.lib
   CONFIG = Debug
   FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   LINK_FLAGS = -Xlinker /subsystem:console -fuse-ld=lld-link
-  LINK_LIBRARIES = voxl/voxl.lib  vcpkg_installed/x64-windows/debug/lib/SDL3.lib  vcpkg_installed/x64-windows/debug/lib/glad.lib  vcpkg_installed/x64-windows/debug/lib/glm.lib  -lopengl32.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
+  LINK_LIBRARIES = voxl/voxl.lib  vcpkg_installed/x64-windows/debug/lib/SDL3.lib  vcpkg_installed/x64-windows/debug/lib/glad.lib  vcpkg_installed/x64-windows/debug/lib/glm.lib  _deps/FastNoise2/src/FastNoiseD.lib  -lopengl32.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
   POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Projects/voxl_engine/build/clang-debug/applications/sandbox.exe -installedDir E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
@@ -236,8 +801,58 @@ build applications/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build applications/rebuild_cache: phony applications/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build applications/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build applications/CMakeFiles/install.util: CUSTOM_COMMAND applications/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build applications/install: phony applications/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build applications/CMakeFiles/install/local.util: CUSTOM_COMMAND applications/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build applications/install/local: phony applications/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build applications/CMakeFiles/install/strip.util: CUSTOM_COMMAND applications/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build applications/install/strip: phony applications/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
+
+build FastNoise: phony _deps/FastNoise2/src/FastNoiseD.lib
+
+build FastNoiseD.lib: phony _deps/FastNoise2/src/FastNoiseD.lib
+
+build FastSIMD: phony _deps/fastsimd-build/FastSIMD
+
+build FastSIMD_FastNoise: phony _deps/FastNoise2/src/FastSIMD_FastNoise
 
 build sandbox: phony applications/sandbox.exe
 
@@ -260,6 +875,34 @@ build all: phony voxl/all applications/all
 # =============================================================================
 
 #############################################
+# Folder: E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2
+
+build _deps/FastNoise2/all: phony _deps/FastNoise2/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src
+
+build _deps/FastNoise2/src/all: phony _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build
+
+build _deps/fastsimd-build/all: phony _deps/fastsimd-build/FastSIMD _deps/fastsimd-build/dispatch/all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/dispatch
+
+build _deps/fastsimd-build/dispatch/all: phony
+
+# =============================================================================
+
+#############################################
 # Folder: E:/Projects/voxl_engine/build/clang-debug/applications
 
 build applications/all: phony applications/sandbox.exe
@@ -269,7 +912,7 @@ build applications/all: phony applications/sandbox.exe
 #############################################
 # Folder: E:/Projects/voxl_engine/build/clang-debug/voxl
 
-build voxl/all: phony voxl/voxl.lib
+build voxl/all: phony voxl/voxl.lib _deps/FastNoise2/all
 
 # =============================================================================
 # Built-in targets
@@ -292,14 +935,14 @@ build E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs: 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja E$:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake: RERUN_CMAKE E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs | C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake
+build build.ninja E$:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/dispatch/cmake_install.cmake E$:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake: RERUN_CMAKE E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/cmake.verify_globs | C$:/Program$ Files/CMake/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/FastNoise2/CMakeLists.txt E$:/Projects/voxl_engine/external/FastNoise2/cmake/CPM.cmake E$:/Projects/voxl_engine/external/FastNoise2/cmake/Config.cmake.in E$:/Projects/voxl_engine/external/FastNoise2/src/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt _deps/fastsimd-src/CMakeLists.txt _deps/fastsimd-src/cmake/ArchDetect.cmake _deps/fastsimd-src/cmake/ArchDetect.cpp _deps/fastsimd-src/dispatch/CMakeLists.txt _deps/fastsimd-src/dispatch/cmake/ClassSIMD.cmake _deps/fastsimd-src/dispatch/cmake/feature_set_source.cpp.in _deps/fastsimd-src/dispatch/cmake/simd_lib_config.h.in vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Compiler/Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FeatureSummary.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Linker/MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-LLD.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake E$:/Projects/voxl_engine/build/clang-debug/CMakeFiles/VerifyGlobs.cmake E$:/Projects/voxl_engine/CMakeLists.txt E$:/Projects/voxl_engine/applications/CMakeLists.txt E$:/Projects/voxl_engine/external/FastNoise2/CMakeLists.txt E$:/Projects/voxl_engine/external/FastNoise2/cmake/CPM.cmake E$:/Projects/voxl_engine/external/FastNoise2/cmake/Config.cmake.in E$:/Projects/voxl_engine/external/FastNoise2/src/CMakeLists.txt E$:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/vcpkg.cmake E$:/Projects/voxl_engine/vcpkg.json E$:/Projects/voxl_engine/voxl/CMakeLists.txt _deps/fastsimd-src/CMakeLists.txt _deps/fastsimd-src/cmake/ArchDetect.cmake _deps/fastsimd-src/cmake/ArchDetect.cpp _deps/fastsimd-src/dispatch/CMakeLists.txt _deps/fastsimd-src/dispatch/cmake/ClassSIMD.cmake _deps/fastsimd-src/dispatch/cmake/feature_set_source.cpp.in _deps/fastsimd-src/dispatch/cmake/simd_lib_config.h.in vcpkg_installed/x64-windows/share/entt/EnTTConfig.cmake vcpkg_installed/x64-windows/share/entt/EnTTConfigVersion.cmake vcpkg_installed/x64-windows/share/entt/EnTTTargets.cmake vcpkg_installed/x64-windows/share/glad/gladConfig.cmake vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake vcpkg_installed/x64-windows/share/glad/gladTargets.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake vcpkg_installed/x64-windows/share/glm/glmConfig.cmake vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake: phony
 
 
 #############################################

@@ -1,31 +1,97 @@
 [
 {
   "directory": "E:/Projects/voxl_engine/build/clang-debug",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\application.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\application.cpp",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\application.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\application.cpp",
   "file": "E:/Projects/voxl_engine/voxl/src/core/application.cpp",
   "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj"
 },
 {
   "directory": "E:/Projects/voxl_engine/build/clang-debug",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\layer_stack.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\layer_stack.cpp",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\input.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\input.cpp",
+  "file": "E:/Projects/voxl_engine/voxl/src/core/input.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/core/input.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\layer_stack.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\layer_stack.cpp",
   "file": "E:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp",
   "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj"
 },
 {
   "directory": "E:/Projects/voxl_engine/build/clang-debug",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\timestep.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\timestep.cpp",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\resource_manager.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\resource_manager.cpp",
+  "file": "E:/Projects/voxl_engine/voxl/src/core/resource_manager.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/core/resource_manager.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\core\\timestep.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\core\\timestep.cpp",
   "file": "E:/Projects/voxl_engine/voxl/src/core/timestep.cpp",
   "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj"
 },
 {
   "directory": "E:/Projects/voxl_engine/build/clang-debug",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/interne -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\platform\\sdl3\\SDL3Window.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\platform\\sdl3\\SDL3Window.cpp",
-  "file": "E:/Projects/voxl_engine/voxl/src/platform/sdl3/SDL3Window.cpp",
-  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/platform/sdl3/SDL3Window.cpp.obj"
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\platform\\gl\\GLRenderer.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\platform\\gl\\GLRenderer.cpp",
+  "file": "E:/Projects/voxl_engine/voxl/src/platform/gl/GLRenderer.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/platform/gl/GLRenderer.cpp.obj"
 },
 {
   "directory": "E:/Projects/voxl_engine/build/clang-debug",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -IE:/Projects/voxl_engine/voxl/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o applications\\CMakeFiles\\sandbox.dir\\sandbox\\main.cpp.obj -c E:\\Projects\\voxl_engine\\applications\\sandbox\\main.cpp",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o voxl\\CMakeFiles\\voxl.dir\\src\\platform\\sdl\\SDLWindow.cpp.obj -c E:\\Projects\\voxl_engine\\voxl\\src\\platform\\sdl\\SDLWindow.cpp",
+  "file": "E:/Projects/voxl_engine/voxl/src/platform/sdl/SDLWindow.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/voxl/CMakeFiles/voxl.dir/src/platform/sdl/SDLWindow.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o _deps\\FastNoise2\\src\\CMakeFiles\\FastNoise.dir\\FastNoise\\Metadata.cpp.obj -c E:\\Projects\\voxl_engine\\external\\FastNoise2\\src\\FastNoise\\Metadata.cpp",
+  "file": "E:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/Metadata.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/Metadata.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o _deps\\FastNoise2\\src\\CMakeFiles\\FastNoise.dir\\FastNoise\\SmartNode.cpp.obj -c E:\\Projects\\voxl_engine\\external\\FastNoise2\\src\\FastNoise\\SmartNode.cpp",
+  "file": "E:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/SmartNode.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/SmartNode.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_EXPORT -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o _deps\\FastNoise2\\src\\CMakeFiles\\FastNoise.dir\\FastNoise\\FastNoise_C.cpp.obj -c E:\\Projects\\voxl_engine\\external\\FastNoise2\\src\\FastNoise\\FastNoise_C.cpp",
+  "file": "E:/Projects/voxl_engine/external/FastNoise2/src/FastNoise/FastNoise_C.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastNoise.dir/FastNoise/FastNoise_C.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -o _deps\\FastNoise2\\src\\CMakeFiles\\FastSIMD_FastNoise.dir\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_SSE2.cpp.obj -c E:\\Projects\\voxl_engine\\build\\clang-debug\\_deps\\FastNoise2\\src\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_SSE2.cpp",
+  "file": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE2.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -msse4.1 -o _deps\\FastNoise2\\src\\CMakeFiles\\FastSIMD_FastNoise.dir\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_SSE41.cpp.obj -c E:\\Projects\\voxl_engine\\build\\clang-debug\\_deps\\FastNoise2\\src\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_SSE41.cpp",
+  "file": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_SSE41.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -mfma -mavx2 -o _deps\\FastNoise2\\src\\CMakeFiles\\FastSIMD_FastNoise.dir\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_AVX2.cpp.obj -c E:\\Projects\\voxl_engine\\build\\clang-debug\\_deps\\FastNoise2\\src\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_AVX2.cpp",
+  "file": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX2.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTSIMD_EXPORT -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_LIBRARY_NAME=FastSIMD_FastNoise -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -IE:/Projects/voxl_engine/external/FastNoise2/src/../include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -fno-stack-protector -Wno-nan-infinity-disabled -mllvm -x86-use-vzeroupper=0 -ffast-math -mfma -mavx512f -mavx512dq -mavx512vl -mavx512bw -o _deps\\FastNoise2\\src\\CMakeFiles\\FastSIMD_FastNoise.dir\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_AVX512.cpp.obj -c E:\\Projects\\voxl_engine\\build\\clang-debug\\_deps\\FastNoise2\\src\\fastsimd\\FastSIMD_FastNoise\\FastSIMD_FastNoise_AVX512.cpp",
+  "file": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/CMakeFiles/FastSIMD_FastNoise.dir/fastsimd/FastSIMD_FastNoise/FastSIMD_FastNoise_AVX512.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTSIMD_EXPORT -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o _deps\\fastsimd-build\\CMakeFiles\\FastSIMD.dir\\src\\FastSIMD.cpp.obj -c E:\\Projects\\voxl_engine\\build\\clang-debug\\_deps\\fastsimd-src\\src\\FastSIMD.cpp",
+  "file": "E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/src/FastSIMD.cpp",
+  "output": "E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/CMakeFiles/FastSIMD.dir/src/FastSIMD.cpp.obj"
+},
+{
+  "directory": "E:/Projects/voxl_engine/build/clang-debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o applications\\CMakeFiles\\sandbox.dir\\sandbox\\main.cpp.obj -c E:\\Projects\\voxl_engine\\applications\\sandbox\\main.cpp",
   "file": "E:/Projects/voxl_engine/applications/sandbox/main.cpp",
   "output": "E:/Projects/voxl_engine/build/clang-debug/applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj"
 }

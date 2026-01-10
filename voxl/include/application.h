@@ -4,17 +4,23 @@
 
 #include <memory>
 
+#include "input.h"
 #include "layer_stack.h"
 #include "window.h"
+#include "renderer.h"
 #include "timestep.h"
+#include "resource_manager.h"
 
 
 namespace voxl {
 
 struct AppContext {
   IWindow* pWindow = nullptr;
+  IRenderer* pRenderer = nullptr;
   Timestep* pTimestep = nullptr;
   LayerStack* pLayerStack = nullptr;
+  Input* pInput = nullptr;
+  ResourceManager* pResManager = nullptr;
 };
 
 
@@ -33,8 +39,11 @@ private:
   bool _running = true;
 
   std::unique_ptr<IWindow> _pWindow;
+  std::unique_ptr<IRenderer> _pRenderer;
   Timestep _timestep;
   LayerStack _layerStack;
+  Input _input;
+  ResourceManager _resManager;
   
   AppContext _context;
 

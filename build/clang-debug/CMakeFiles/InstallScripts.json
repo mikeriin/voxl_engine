@@ -3,6 +3,10 @@
 	[
 		"E:/Projects/voxl_engine/build/clang-debug/cmake_install.cmake",
 		"E:/Projects/voxl_engine/build/clang-debug/voxl/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/cmake_install.cmake",
+		"E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-build/dispatch/cmake_install.cmake",
 		"E:/Projects/voxl_engine/build/clang-debug/applications/cmake_install.cmake"
 	],
 	"Parallel" : false

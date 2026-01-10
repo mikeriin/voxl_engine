@@ -8,7 +8,7 @@
 namespace voxl {
 
 
-class Application;
+class AppContext;
 
 
 // c'est la logique de chaque couche de l'application
@@ -16,7 +16,7 @@ class Layer {
 public:
   virtual ~Layer() = default;
 
-  virtual void OnAttach(Application& app) {}
+  virtual void OnAttach(AppContext& ctx) {}
   virtual void OnDetach() {}
 
   virtual void OnEvent(Event& e) {}
