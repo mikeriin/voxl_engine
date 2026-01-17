@@ -16,6 +16,7 @@
 #include "shader_program.h"
 #include "timestep.h"
 #include "window.h"
+#include "dev_console.h"
 
 // IWYU pragma: end_exports
 

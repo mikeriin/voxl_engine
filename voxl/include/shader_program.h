@@ -16,7 +16,7 @@ struct ShaderProgram final: public Resource { };
 
 template<>
 struct ResourceLoader<ShaderProgram> {
-  static ShaderProgram Load(const std::string& vertexPath, const std::string& fragmentPath) {
+  static ShaderProgram Load(const std::string& name) {
     ShaderProgram program{};
     
 

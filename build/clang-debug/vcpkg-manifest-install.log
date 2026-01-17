@@ -5,6 +5,7 @@ The following packages are already installed:
     entt:x64-windows@3.16.0
     glad[core,loader]:x64-windows@0.1.36
     glm:x64-windows@1.0.3
+    imgui[core,opengl3-binding,sdl3-binding]:x64-windows@1.91.9
   * opengl-registry:x64-windows@2025-10-23
     sdl3:x64-windows@3.4.0
   * vcpkg-cmake:x64-windows@2024-04-23
@@ -34,4 +35,10 @@ sdl3 provides CMake targets:
   find_package(SDL3 CONFIG REQUIRED)
   target_link_libraries(main PRIVATE SDL3::SDL3)
 
-All requested installations completed successfully in: 417 us
+imgui provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(imgui CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE imgui::imgui)
+
+All requested installations completed successfully in: 433 us

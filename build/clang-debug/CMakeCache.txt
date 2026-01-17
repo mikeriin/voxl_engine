@@ -487,6 +487,9 @@ glad_DIR:PATH=E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-wind
 //The directory containing a CMake configuration file for glm.
 glm_DIR:PATH=E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/share/glm
 
+//The directory containing a CMake configuration file for imgui.
+imgui_DIR:PATH=E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/share/imgui
+
 //Value Computed by CMake
 voxl_superproject_BINARY_DIR:STATIC=E:/Projects/voxl_engine/build/clang-debug
 

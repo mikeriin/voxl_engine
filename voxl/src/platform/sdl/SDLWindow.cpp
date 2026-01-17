@@ -2,6 +2,7 @@
 
 
 #include <cstdint>
+#include <imgui_impl_sdl3.h>
 #include <utility>
 #include <stdexcept>
 
@@ -10,6 +11,7 @@
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_error.h>
 #include <SDL3/SDL_events.h>
+#include <imgui.h>
 
 
 namespace voxl {
@@ -44,12 +46,18 @@ SDLWindow::SDLWindow(const WindowDesc& desc)
     _impl->pWindow = SDL_CreateWindow(desc.title.c_str(), desc.width, desc.height, window_flags);
     if (!_impl->pWindow)
       throw std::runtime_error(SDL_GetError());
+
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGui::StyleColorsDark();
   }
 
 
 void SDLWindow::PollEvents() {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
+    ImGui_ImplSDL3_ProcessEvent(&e);
+
     switch (e.type) {
     case SDL_EVENT_QUIT: {
       WindowCloseEvent event;
@@ -92,6 +100,8 @@ void SDLWindow::PollEvents() {
 
 
 SDLWindow::~SDLWindow () {
+  ImGui::DestroyContext();
+
   if (_impl->pWindow)
     SDL_DestroyWindow(_impl->pWindow);
   SDL_QuitSubSystem(SDL_INIT_VIDEO);

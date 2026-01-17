@@ -10,6 +10,7 @@
 #include "renderer.h"
 #include "timestep.h"
 #include "resource_manager.h"
+#include "dev_console.h"
 
 
 namespace voxl {
@@ -21,6 +22,7 @@ struct AppContext {
   LayerStack* pLayerStack = nullptr;
   Input* pInput = nullptr;
   ResourceManager* pResManager = nullptr;
+  IDevConsole* pDevConsole = nullptr;
 };
 
 
@@ -44,6 +46,7 @@ private:
   LayerStack _layerStack;
   Input _input;
   ResourceManager _resManager;
+  NullConsole _nullConsole;
   
   AppContext _context;
 

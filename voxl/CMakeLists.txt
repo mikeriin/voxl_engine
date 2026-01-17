@@ -16,6 +16,7 @@ find_package(SDL3 CONFIG REQUIRED)
 find_package(EnTT CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
 
 # Deps externes non prises en charge par vcpkg
 set(FASTNOISE2_NOISETOOL OFF CACHE BOOL "Build Noise Tool" FORCE)
@@ -30,6 +31,7 @@ target_link_libraries(voxl PUBLIC
   EnTT::EnTT
   glad::glad
   glm::glm
+  imgui::imgui
   FastNoise
   opengl32
 )

@@ -1,12 +1,14 @@
 #include "application.h"
 
 
+#include <format>
 #include <memory>
 #include <print>
 #include <utility>
 
 #include "SDLWindow.h"
 #include "GLRenderer.h"
+#include "dev_console.h"
 #include "event.h"
 #include "timestep.h"
 
@@ -39,6 +41,7 @@ Application::Application(const voxl::WindowDesc &desc)
     _context.pLayerStack = &_layerStack;
     _context.pInput = &_input;
     _context.pResManager = &_resManager;
+    _context.pDevConsole = &_nullConsole;
   }
 
 
@@ -70,6 +73,8 @@ void Application::Run() {
     for (auto it = _layerStack.Begin(); it != _layerStack.End(); it++) (*it)->OnRender();
     _pRenderer->EndFrame();
   }
+
+  for (auto it = _layerStack.Begin(); it != _layerStack.End(); it++) (*it)->OnDetach();
 }
 
 
@@ -99,13 +104,18 @@ void Application::onEvent(Event& e) {
 
   if (e.type == EventType::WindowResize) {
     auto& window_resize_event = static_cast<WindowResizeEvent&>(e);
-    std::println("Window resized[{}, {}]", window_resize_event.width, window_resize_event.height);
+
+    std::string buffer = std::format("Window resized[{}, {}]", window_resize_event.width, window_resize_event.height);
+    _context.pDevConsole->Send(DevConsoleMessage{
+      .level = DevConsoleMessage::INFO,
+      .buffer = buffer
+    });
   }
 
   // on traverse les layers dans le sens inverse, la couche la plus haute a la priorité
   for (auto it = _layerStack.RBegin(); it != _layerStack.REnd(); it++) {
     (*it)->OnEvent(e);
-    if (e.handled) break;
+    if (e.handled) break; // si l'event est marqué handled alors on ne l'utilise plus
   }
 
   if (e.type == EventType::KeyPressed || e.type == EventType::KeyReleased) _input.ProcessEvent(e);

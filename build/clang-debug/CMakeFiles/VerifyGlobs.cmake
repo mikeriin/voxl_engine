@@ -9,6 +9,7 @@ set(OLD_GLOB
   "E:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/resource_manager.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/timestep.cpp"
+  "E:/Projects/voxl_engine/voxl/src/game/dev_console.cpp"
   "E:/Projects/voxl_engine/voxl/src/platform/gl/GLRenderer.cpp"
   "E:/Projects/voxl_engine/voxl/src/platform/sdl/SDLWindow.cpp"
   )

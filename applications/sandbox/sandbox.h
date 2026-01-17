@@ -5,6 +5,7 @@
 #include <print>
 
 #include "application.h"
+#include "dev_console.h"
 #include "keyboard.h"
 #include "layer.h"
 #include "shader_program.h"
@@ -14,9 +15,12 @@ class SandboxLayer: public voxl::Layer {
 public:
   void OnAttach(voxl::AppContext& ctx) override { 
     _pCtx = &ctx;
-    _pCtx->pWindow->Resize(800, 600);
-    _pCtx->pResManager->Load<voxl::ShaderProgram>("sh_glob", "vert", "frag");
-    _pCtx->pResManager->LoadOrGet<voxl::ShaderProgram>("sh_glob", "vert", "frag");
+    _pCtx->pResManager->LoadOrGet<voxl::ShaderProgram>("sh_global", "global");
+
+    _pCtx->pDevConsole->Send(voxl::DevConsoleMessage{
+      .level = voxl::DevConsoleMessage::INFO,
+      .buffer = "SandboxLayer attached"
+    });
   }
 
   void OnUpdate(double dt, double alpha) override {
@@ -30,7 +34,7 @@ public:
   }
 
 private:
-  voxl::AppContext* _pCtx;
+  voxl::AppContext* _pCtx = nullptr;
 };
 
 

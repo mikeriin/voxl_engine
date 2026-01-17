@@ -21,7 +21,7 @@ public:
 
   virtual void OnEvent(Event& e) {}
   virtual void OnUpdate(double dt, double alpha) {}
-  virtual void OnFixedUpdate(double fixed_dt) {};
+  virtual void OnFixedUpdate(double fixed_dt) {}
   virtual void OnRender() {}
 };
 

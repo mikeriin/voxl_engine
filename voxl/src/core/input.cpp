@@ -9,7 +9,7 @@ namespace voxl {
 
 void Input::ProcessEvent(Event& e) {
   if (e.type == EventType::KeyPressed) {
-    auto event = static_cast<KeyPressedEvent&>(e);
+    const auto& event = static_cast<KeyPressedEvent&>(e);
     if (event.repeat) return;
 
     int scancode = event.scancode;
@@ -18,7 +18,7 @@ void Input::ProcessEvent(Event& e) {
     _keyPressed.set(scancode);
   }
   if (e.type == EventType::KeyReleased) {
-    auto event = static_cast<KeyReleasedEvent&>(e);
+    const auto& event = static_cast<KeyReleasedEvent&>(e);
     int scancode = event.scancode;
 
     _keyHeld.reset(scancode);
