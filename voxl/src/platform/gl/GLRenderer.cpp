@@ -40,6 +40,8 @@ GLRenderer::GLRenderer(IWindow* window)
 
     ImGui_ImplSDL3_InitForOpenGL(static_cast<SDL_Window*>(_impl->pWindow->Handle()), _impl->glContext);
     ImGui_ImplOpenGL3_Init("#version 460");
+
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
   }
 
 
@@ -57,7 +59,6 @@ void GLRenderer::BeginFrame() {
   ImGui_ImplSDL3_NewFrame();
   ImGui::NewFrame();
 
-  glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -67,6 +68,11 @@ void GLRenderer::EndFrame() {
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
   SDL_GL_SwapWindow(static_cast<SDL_Window*>(_impl->pWindow->Handle()));
+}
+
+
+void GLRenderer::SetClearColor(float r, float g, float b, float a) {
+  glClearColor(r, g, b, a);
 }
 
 

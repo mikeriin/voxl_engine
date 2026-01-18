@@ -6,6 +6,8 @@
 #include <string>
 
 #include <imgui.h>
+#include <string_view>
+#include <vector>
 
 #include "layer.h"
 
@@ -58,6 +60,7 @@ private:
 
   static std::string clearHistoryLine(const std::string& line);
   static int historyCallback(ImGuiInputTextCallbackData* data);
+  std::vector<std::string_view> splitWords(std::string_view sv);
 };
 
 

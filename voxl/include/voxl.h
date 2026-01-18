@@ -17,6 +17,7 @@
 #include "timestep.h"
 #include "window.h"
 #include "dev_console.h"
+#include "command_manager.h"
 
 // IWYU pragma: end_exports
 

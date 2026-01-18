@@ -11,6 +11,7 @@
 #include "timestep.h"
 #include "resource_manager.h"
 #include "dev_console.h"
+#include "command_manager.h"
 
 
 namespace voxl {
@@ -23,6 +24,7 @@ struct AppContext {
   Input* pInput = nullptr;
   ResourceManager* pResManager = nullptr;
   IDevConsole* pDevConsole = nullptr;
+  CommandManager* pCmdManager = nullptr;
 };
 
 
@@ -47,10 +49,12 @@ private:
   Input _input;
   ResourceManager _resManager;
   NullConsole _nullConsole;
+  CommandManager _cmdManager;
   
   AppContext _context;
 
   void onEvent(Event& e);
+  void registerCommands();
 };
 
 }

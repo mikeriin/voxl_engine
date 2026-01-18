@@ -5,6 +5,7 @@
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Projects/voxl_engine/voxl/src/*.cpp")
 set(OLD_GLOB
   "E:/Projects/voxl_engine/voxl/src/core/application.cpp"
+  "E:/Projects/voxl_engine/voxl/src/core/command_manager.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/input.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/layer_stack.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/resource_manager.cpp"

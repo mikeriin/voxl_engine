@@ -4,10 +4,12 @@
 #include <format>
 #include <memory>
 #include <print>
+#include <string>
 #include <utility>
 
 #include "SDLWindow.h"
 #include "GLRenderer.h"
+#include "command_manager.h"
 #include "dev_console.h"
 #include "event.h"
 #include "timestep.h"
@@ -42,10 +44,13 @@ Application::Application(const voxl::WindowDesc &desc)
     _context.pInput = &_input;
     _context.pResManager = &_resManager;
     _context.pDevConsole = &_nullConsole;
+    _context.pCmdManager = &_cmdManager;
   }
 
 
 void Application::Run() {
+  registerCommands();
+
   double fixed_timer = 0.0;
   while (_running) {
     _pWindow->PollEvents();
@@ -119,6 +124,54 @@ void Application::onEvent(Event& e) {
   }
 
   if (e.type == EventType::KeyPressed || e.type == EventType::KeyReleased) _input.ProcessEvent(e);
+}
+
+
+void Application::registerCommands() {
+  // enregistrement de la commande /quit qui ferme l'application
+  _cmdManager.RegisterCommand("quit", Command{
+    .helper = "/quit",
+    .func = [this](std::span<const std::string_view> args) -> bool {
+      if (args.size() != 0) {
+        this->_context.pDevConsole->Send(DevConsoleMessage{
+          .level = DevConsoleMessage::WARNING,
+          .buffer = "Failed to execute /quit, too many arguments."
+        });
+        return false;
+      }
+      _running = false;
+      return true;
+    }
+  });
+
+
+  // commande print pour gérer plusieurs arguments
+  _cmdManager.RegisterCommand("print", Command{
+    .helper = "/print",
+    .func = [this](std::span<const std::string_view> args) -> bool {
+      if (args.size() == 0) {
+        this->_context.pDevConsole->Send(DevConsoleMessage{
+          .level = DevConsoleMessage::WARNING,
+          .buffer = "Failed to execute /print, need at least one argument."
+        });
+        return false;
+      }
+
+      std::string buffer;
+      for (std::string_view token: args) {
+        buffer.append(token.data(), token.size());
+        buffer.push_back(' ');
+      }
+
+      this->_context.pDevConsole->Send(DevConsoleMessage{
+        .level = DevConsoleMessage::NONE,
+        .buffer = std::move(buffer)
+      });
+
+      return true;
+    }
+  });
+
 }
 
 

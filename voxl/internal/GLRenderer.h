@@ -21,6 +21,8 @@ public:
   void BeginFrame() override;
   void EndFrame() override;
 
+  void SetClearColor(float r, float g, float b, float a) override;
+
 private:
   struct Impl;
   std::unique_ptr<Impl> _impl;

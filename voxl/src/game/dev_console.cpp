@@ -1,12 +1,18 @@
 #include "dev_console.h"
 
 
+#include <cctype>
+#include <format>
+#include <print>
+#include <string_view>
+#include <vector>
+
+#include <imgui.h>
+
 #include "application.h"
+#include "command_manager.h"
 #include "event.h"
 #include "keyboard.h"
-#include <format>
-#include <imgui.h>
-#include <print>
 
 
 namespace voxl {
@@ -20,13 +26,6 @@ int DevConsole::_historyIndex = -1;
 void DevConsole::OnAttach(AppContext& ctx) {
   _pCtx = &ctx;
   ctx.pDevConsole = this;
-
-  for (int i = 0; i < 100; i++) {
-    Send(DevConsoleMessage{
-      .level = DevConsoleMessage::NONE,
-      .buffer = std::format("{}", i)
-    });
-  }
 }
 
 
@@ -49,15 +48,28 @@ void DevConsole::OnEvent(Event& e) {
 void DevConsole::OnUpdate([[maybe_unused]] double dt, [[maybe_unused]] double alpha) {
   if (_buffer.size() == 0) return;
 
-  std::println("buffer size: {}", _buffer.size());
   Send(DevConsoleMessage{
     .level = DevConsoleMessage::Level::NONE,
     .buffer = _buffer
   });
-  _buffer.clear();
 
-  for (const auto& line: _history)
-    std::println("{}", line);
+  if (_buffer[0] == COMMAND_PREFIX) {
+    std::string_view line = _buffer;
+    auto tokens = splitWords(line);
+
+    if (!tokens.empty()) {
+      std::string_view command_sv = tokens[0].substr(1, tokens[0].size() - 1);
+      // on ignore le premier mot.
+      std::span<const std::string_view> args(tokens.data() + 1, tokens.size() - 1);
+
+      std::println("{}", args.size());
+
+      bool executed = _pCtx->pCmdManager->ExecuteCommand(command_sv, args);
+      if (executed) std::println("Command executed.");
+    }
+  }
+
+  _buffer.clear();
 }
 
 
@@ -181,6 +193,25 @@ int DevConsole::historyCallback(ImGuiInputTextCallbackData* data) {
   }
 
   return 0;
+}
+
+
+std::vector<std::string_view> DevConsole::splitWords(std::string_view sv) {
+  std::vector<std::string_view> out;
+  size_t i = 0;
+
+  while (i < sv.size()) {
+    while (i < sv.size() && std::isspace((unsigned char)sv[i])) ++i;
+    if (i >= sv.size()) break;
+
+    const size_t start = i;
+    while (i < sv.size() && !std::isspace((unsigned char)sv[i])) ++i;
+
+    out.emplace_back(sv.data() + start, i - start);
+    // begin = index du début du mot, end = taille du mot == index du charactère - index début du mot
+  }
+
+  return out;
 }
 
 
