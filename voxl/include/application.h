@@ -6,10 +6,10 @@
 
 #include "input.h"
 #include "layer_stack.h"
-#include "window.h"
-#include "renderer.h"
-#include "timestep.h"
 #include "resource_manager.h"
+#include "window.h"
+#include "gfx/renderer.h"
+#include "timestep.h"
 #include "dev_console.h"
 #include "command_manager.h"
 
@@ -19,10 +19,10 @@ namespace voxl {
 struct AppContext {
   IWindow* pWindow = nullptr;
   IRenderer* pRenderer = nullptr;
+  ResourceManager* pResManager = nullptr;
   Timestep* pTimestep = nullptr;
   LayerStack* pLayerStack = nullptr;
   Input* pInput = nullptr;
-  ResourceManager* pResManager = nullptr;
   IDevConsole* pDevConsole = nullptr;
   CommandManager* pCmdManager = nullptr;
 };
@@ -44,10 +44,10 @@ private:
 
   std::unique_ptr<IWindow> _pWindow;
   std::unique_ptr<IRenderer> _pRenderer;
+  ResourceManager _resManager;
   Timestep _timestep;
   LayerStack _layerStack;
   Input _input;
-  ResourceManager _resManager;
   NullConsole _nullConsole;
   CommandManager _cmdManager;
   

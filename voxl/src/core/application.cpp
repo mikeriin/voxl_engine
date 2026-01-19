@@ -7,8 +7,8 @@
 #include <string>
 #include <utility>
 
-#include "SDLWindow.h"
-#include "GLRenderer.h"
+#include "sdl_window.h"
+#include "gl_renderer.h"
 #include "command_manager.h"
 #include "dev_console.h"
 #include "event.h"
@@ -39,10 +39,10 @@ Application::Application(const voxl::WindowDesc &desc)
 
     _context.pWindow = _pWindow.get();
     _context.pRenderer = _pRenderer.get();
+    _context.pResManager = &_resManager;
     _context.pTimestep = &_timestep;
     _context.pLayerStack = &_layerStack;
     _context.pInput = &_input;
-    _context.pResManager = &_resManager;
     _context.pDevConsole = &_nullConsole;
     _context.pCmdManager = &_cmdManager;
   }

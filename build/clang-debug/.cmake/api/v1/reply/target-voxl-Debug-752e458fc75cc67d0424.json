@@ -1,0 +1,358 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "voxl/voxl.lib"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_library",
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"external/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"voxl/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 653,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"compileDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glm::glm::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "imgui::imgui::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastNoise::@82bdf66e7a13f7a5aeda"
+		}
+	],
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "FASTNOISE_STATIC_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "FASTSIMD_IS_RELAXED=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "FASTSIMD_STATIC_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "E:/Projects/voxl_engine/voxl/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "E:/Projects/voxl_engine/voxl/internal"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "E:/Projects/voxl_engine/external/FastNoise2/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "E:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3,
+					3
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "FastSIMD::@6a824029d8a23c0cb0e8"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastSIMD_FastNoise::@82bdf66e7a13f7a5aeda"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastNoise::@82bdf66e7a13f7a5aeda"
+		}
+	],
+	"id" : "voxl::@9f81538e4292b1141110",
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glm::glm::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "imgui::imgui::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastNoise::@82bdf66e7a13f7a5aeda"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glm::glm::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "imgui::imgui::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastNoise::@82bdf66e7a13f7a5aeda"
+		},
+		{
+			"backtrace" : 3,
+			"fragment" : "opengl32"
+		}
+	],
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "SDL3::SDL3-shared::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "EnTT::EnTT::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::glad::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glm::glm::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "imgui::imgui::@9f81538e4292b1141110"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "FastNoise::@82bdf66e7a13f7a5aeda"
+		},
+		{
+			"backtrace" : 3,
+			"fragment" : "opengl32"
+		}
+	],
+	"name" : "voxl",
+	"nameOnDisk" : "voxl.lib",
+	"paths" : 
+	{
+		"build" : "voxl",
+		"source" : "voxl"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/core/application.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/core/command_manager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/core/input.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/core/layer_stack.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/core/timestep.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/game/dev_console.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/platform/gl/gl_render_device.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/platform/gl/gl_renderer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "voxl/src/platform/sdl/sdl_window.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

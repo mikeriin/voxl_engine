@@ -3,21 +3,26 @@
 
 // IWYU pragma: begin_exports
 
+#include "gfx/render_command.h"
+#include "gfx/render_device.h"
+#include "gfx/render_pass.h"
+#include "gfx/render_types.h"
+#include "gfx/renderer.h"
+
+#include "res/resource.h"
+#include "res/shader_program.h"
+
 #include "application.h"
+#include "command_manager.h"
+#include "dev_console.h"
 #include "event.h"
 #include "input.h"
 #include "keyboard.h"
 #include "layer_stack.h"
 #include "layer.h"
-#include "renderer.h"
-#include "resource_loader.h"
-#include "resource_manager.h"
-#include "resource.h"
-#include "shader_program.h"
 #include "timestep.h"
+#include "utils.h"
 #include "window.h"
-#include "dev_console.h"
-#include "command_manager.h"
 
 // IWYU pragma: end_exports
 

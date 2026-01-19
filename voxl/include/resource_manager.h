@@ -2,73 +2,78 @@
 #define VOXL_RESOURCE_MANAGER_H
 
 
-#include <print>
-#include <string>
+#include <any>
 #include <memory>
+#include <string>
 #include <unordered_map>
 #include <utility>
+#include <typeindex>
 
-#include "resource.h"
-#include "resource_loader.h"
+#include "res/resource.h"
 
 
 namespace voxl {
 
 
+template<typename T>
+using Cache = std::unordered_map<std::string, std::shared_ptr<T>>;
+
+
 class ResourceManager {
-  using Res = std::shared_ptr<Resource>;
-
 public:
-  ~ResourceManager();
-
-  template<typename T, typename ...Args>
+  template<ResourceType T, typename... Args>
   std::shared_ptr<T> Load(const std::string& name, Args&&... args);
 
-  template<typename T>
-  Res Get(const std::string& name);
-
-  template<typename T, typename ...Args>
-  std::shared_ptr<voxl::Resource> LoadOrGet(const std::string& name, Args&&... args);
+  template<ResourceType T>
+  std::shared_ptr<T> Get(const std::string& name);
 
 private:
-  std::unordered_map<std::string, Res> _resources;
+  std::unordered_map<std::type_index, std::any> _caches;
+
+  template<typename T>
+  Cache<T>& getCache();
 };
 
 
+template<ResourceType T, typename... Args>
+inline std::shared_ptr<T> ResourceManager::Load(const std::string& name, Args&&... args) {
+  auto& cache = getCache<T>();
+
+  auto it = cache.find(name);
+  if (it != cache.end()) 
+    return it->second;
+  
+  auto res = Loader<T>::Load(std::forward<Args>(args)...);
+  if (!res) return nullptr;
+  cache.emplace(name, res);
+  return res;
 }
 
 
-template<typename T, typename ...Args>
-inline std::shared_ptr<T> voxl::ResourceManager::Load(const std::string& name, Args&&... args) {
-  auto loaded = std::make_shared<T>(std::move(ResourceLoader<T>::Load(std::forward<Args>(args)...)));
+template<ResourceType T>
+inline std::shared_ptr<T> ResourceManager::Get(const std::string& name) {
+  auto& cache = getCache<T>();
+  if (cache == std::bad_any_cast()) return nullptr;
 
-  if (loaded) {
-    _resources.insert_or_assign(name, loaded);
-    return loaded;
-  }
+  auto it = cache.find(name);
+  if (it == cache.end()) return nullptr;
 
-  return nullptr;
+  return it.second;
 }
 
 
 template<typename T>
-inline std::shared_ptr<voxl::Resource> voxl::ResourceManager::Get(const std::string& name) {
-  auto it = _resources.find(name);
-  if (it != _resources.end()) return it->second;
+inline Cache<T>& ResourceManager::getCache() {
+  const std::type_index key{typeid(T)};
 
-  std::println("This resource[{}] doesn't exist.", name);
-  return nullptr;
+  auto it = _caches.find(key);
+  if (it == _caches.end()) 
+    it = _caches.emplace(key, Cache<T>{}).first;
+
+  return std::any_cast<Cache<T>&>(it->second);
 }
 
 
-template<typename T, typename ...Args>
-inline std::shared_ptr<voxl::Resource> voxl::ResourceManager::LoadOrGet(const std::string& name, Args&&... args) {
-  auto it = _resources.find(name);
-  if (it != _resources.end()) return it->second;
-
-  auto loaded = std::make_shared<T>(std::move(ResourceLoader<T>::Load(std::forward<Args>(args)...)));
-  _resources.insert(std::make_pair(name, loaded));
-  return loaded;
 }
 
 
