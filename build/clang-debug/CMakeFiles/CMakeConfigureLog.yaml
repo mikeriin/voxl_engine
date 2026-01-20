@@ -9166,8 +9166,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-t23kth"
-      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-t23kth"
+      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-7ckfoz"
+      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-7ckfoz"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -9181,16 +9181,16 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-t23kth'
+        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-7ckfoz'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_3af37
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_3af37.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_3af37.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_3af37.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -v -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_3af37.dir/CMakeCCompilerABI.c.obj -o cmTC_3af37.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_3af37.lib -Xlinker /pdb:cmTC_3af37.pdb -Xlinker /version:0.0     && cd ."
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_ed72c
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_ed72c.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_ed72c.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_ed72c.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -v -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_ed72c.dir/CMakeCCompilerABI.c.obj -o cmTC_ed72c.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_ed72c.lib -Xlinker /pdb:cmTC_ed72c.pdb -Xlinker /version:0.0     && cd ."
         clang version 21.1.7
         Target: x86_64-pc-windows-msvc
         Thread model: posix
         InstalledDir: C:\\Program Files\\LLVM\\bin
-         "C:\\\\Program Files\\\\LLVM\\\\bin\\\\lld-link" -out:cmTC_3af37.exe "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\atlmfc\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\ucrt\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\um\\\\x64" "-libpath:C:\\\\Program Files\\\\LLVM\\\\lib\\\\clang\\\\21\\\\lib\\\\windows" -nologo -debug /subsystem:console CMakeFiles/cmTC_3af37.dir/CMakeCCompilerABI.c.obj /MANIFEST:EMBED /implib:cmTC_3af37.lib /pdb:cmTC_3af37.pdb /version:0.0
+         "C:\\\\Program Files\\\\LLVM\\\\bin\\\\lld-link" -out:cmTC_ed72c.exe "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\atlmfc\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\ucrt\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\um\\\\x64" "-libpath:C:\\\\Program Files\\\\LLVM\\\\lib\\\\clang\\\\21\\\\lib\\\\windows" -nologo -debug /subsystem:console CMakeFiles/cmTC_ed72c.dir/CMakeCCompilerABI.c.obj /MANIFEST:EMBED /implib:cmTC_ed72c.lib /pdb:cmTC_ed72c.pdb /version:0.0
         
       exitCode: 0
   -
@@ -9251,8 +9251,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-0lbrk0"
-      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-0lbrk0"
+      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-08vp91"
+      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-08vp91"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -9267,16 +9267,16 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-0lbrk0'
+        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-08vp91'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_39a40
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_39a40.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_39a40.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_39a40.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -v -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_39a40.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_39a40.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_39a40.lib -Xlinker /pdb:cmTC_39a40.pdb -Xlinker /version:0.0     && cd ."
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_03c6e
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_03c6e.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_03c6e.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_03c6e.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -v -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_03c6e.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_03c6e.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_03c6e.lib -Xlinker /pdb:cmTC_03c6e.pdb -Xlinker /version:0.0     && cd ."
         clang version 21.1.7
         Target: x86_64-pc-windows-msvc
         Thread model: posix
         InstalledDir: C:\\Program Files\\LLVM\\bin
-         "C:\\\\Program Files\\\\LLVM\\\\bin\\\\lld-link" -out:cmTC_39a40.exe "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\atlmfc\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\ucrt\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\um\\\\x64" "-libpath:C:\\\\Program Files\\\\LLVM\\\\lib\\\\clang\\\\21\\\\lib\\\\windows" -nologo -debug /subsystem:console CMakeFiles/cmTC_39a40.dir/CMakeCXXCompilerABI.cpp.obj /MANIFEST:EMBED /implib:cmTC_39a40.lib /pdb:cmTC_39a40.pdb /version:0.0
+         "C:\\\\Program Files\\\\LLVM\\\\bin\\\\lld-link" -out:cmTC_03c6e.exe "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\18\\\\BuildTools\\\\VC\\\\Tools\\\\MSVC\\\\14.50.35717\\\\atlmfc\\\\lib\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\ucrt\\\\x64" "-libpath:C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Lib\\\\10.0.26100.0\\\\um\\\\x64" "-libpath:C:\\\\Program Files\\\\LLVM\\\\lib\\\\clang\\\\21\\\\lib\\\\windows" -nologo -debug /subsystem:console CMakeFiles/cmTC_03c6e.dir/CMakeCXXCompilerABI.cpp.obj /MANIFEST:EMBED /implib:cmTC_03c6e.lib /pdb:cmTC_03c6e.pdb /version:0.0
         
       exitCode: 0
   -
@@ -9340,8 +9340,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-thsai7"
-      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-thsai7"
+      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-fqvvgo"
+      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-fqvvgo"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -9355,11 +9355,11 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-thsai7'
+        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-fqvvgo'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_e7f3f
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_e7f3f.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_e7f3f.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_e7f3f.dir/feature_tests.cxx.obj -c E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-thsai7/feature_tests.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_e7f3f.dir/feature_tests.cxx.obj -o cmTC_e7f3f.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_e7f3f.lib -Xlinker /pdb:cmTC_e7f3f.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_aa28f
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_aa28f.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_aa28f.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_aa28f.dir/feature_tests.cxx.obj -c E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-fqvvgo/feature_tests.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_aa28f.dir/feature_tests.cxx.obj -o cmTC_aa28f.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_aa28f.lib -Xlinker /pdb:cmTC_aa28f.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
         
       exitCode: 0
   -
@@ -9374,8 +9374,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-3yzcfu"
-      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-3yzcfu"
+      source: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-wpuib5"
+      binary: "E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-wpuib5"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -9389,11 +9389,11 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-3yzcfu'
+        Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-wpuib5'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_b5df6
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_b5df6.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_b5df6.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_b5df6.dir/feature_tests.cxx.obj -c E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-3yzcfu/feature_tests.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_b5df6.dir/feature_tests.cxx.obj -o cmTC_b5df6.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_b5df6.lib -Xlinker /pdb:cmTC_b5df6.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_d33a9
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_d33a9.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_d33a9.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_d33a9.dir/feature_tests.cxx.obj -c E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeScratch/TryCompile-wpuib5/feature_tests.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\clang.exe -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/cmTC_d33a9.dir/feature_tests.cxx.obj -o cmTC_d33a9.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_d33a9.lib -Xlinker /pdb:cmTC_d33a9.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
         
       exitCode: 0
   -
@@ -10632,10 +10632,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_d400f
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_d400f.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_d400f.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_d400f.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_d400f.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_d400f.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_d400f.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_d400f.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_1959b
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_1959b.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_1959b.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_1959b.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_1959b.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_1959b.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_1959b.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_1959b.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:15:16: error: static assertion failed: FASTSIMD_ARCH<X86=SSE2>
            15 | static_assert( 0, "FASTSIMD_ARCH<" TO_LITERAL( FASTSIMD_ARCH_NAME() ) ">" );
               |                ^
@@ -10679,10 +10679,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_9eeb4
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_9eeb4.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_9eeb4.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_9eeb4.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_9eeb4.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_9eeb4.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_9eeb4.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_9eeb4.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_d4543
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_d4543.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_d4543.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_d4543.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_d4543.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_d4543.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_d4543.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_d4543.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:15:16: error: static assertion failed: FASTSIMD_ARCH<X86=SSE2>
            15 | static_assert( 0, "FASTSIMD_ARCH<" TO_LITERAL( FASTSIMD_ARCH_NAME() ) ">" );
               |                ^
@@ -10726,10 +10726,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_dd2c7
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE41 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_dd2c7.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_dd2c7.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_dd2c7.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_dd2c7.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE41 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_dd2c7.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_dd2c7.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_dd2c7.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_8590a
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE41 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_8590a.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_8590a.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_8590a.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_8590a.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=SSE41 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_8590a.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_8590a.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_8590a.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:15:16: error: static assertion failed: FASTSIMD_ARCH<X86=SSE2>
            15 | static_assert( 0, "FASTSIMD_ARCH<" TO_LITERAL( FASTSIMD_ARCH_NAME() ) ">" );
               |                ^
@@ -10773,10 +10773,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_35016
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_35016.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_35016.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_35016.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_35016.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_35016.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_35016.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_35016.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_1ed44
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_1ed44.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_1ed44.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_1ed44.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_1ed44.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX2 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_1ed44.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_1ed44.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_1ed44.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:15:16: error: static assertion failed: FASTSIMD_ARCH<X86=SSE2>
            15 | static_assert( 0, "FASTSIMD_ARCH<" TO_LITERAL( FASTSIMD_ARCH_NAME() ) ">" );
               |                ^
@@ -10820,10 +10820,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_bf52a
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX512 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_bf52a.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_bf52a.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_bf52a.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_bf52a.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX512 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_bf52a.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_bf52a.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_bf52a.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_12815
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX512 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_12815.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_12815.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_12815.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_12815.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AVX512 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_12815.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_12815.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_12815.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:15:16: error: static assertion failed: FASTSIMD_ARCH<X86=SSE2>
            15 | static_assert( 0, "FASTSIMD_ARCH<" TO_LITERAL( FASTSIMD_ARCH_NAME() ) ">" );
               |                ^
@@ -10867,10 +10867,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_83916
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=NEON -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_83916.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_83916.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_83916.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_83916.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=NEON -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_83916.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_83916.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_83916.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_e2f3b
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=NEON -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_e2f3b.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_e2f3b.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_e2f3b.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_e2f3b.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=NEON -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_e2f3b.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_e2f3b.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_e2f3b.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:9:5: error: function-like macro 'FASTSIMD_FEATURE_VALUE_NEON' is not defined
             9 | #if FASTSIMD_FEATURE_VALUE( TEST_FEATURE_SET_ACTIVE ) > 0
               |     ^
@@ -10911,10 +10911,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_97bcc
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AARCH64 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_97bcc.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_97bcc.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_97bcc.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_97bcc.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AARCH64 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_97bcc.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_97bcc.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_97bcc.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_e4ddc
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AARCH64 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_e4ddc.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_e4ddc.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_e4ddc.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_e4ddc.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=AARCH64 -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_e4ddc.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_e4ddc.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_e4ddc.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:9:5: error: function-like macro 'FASTSIMD_FEATURE_VALUE_AARCH64' is not defined
             9 | #if FASTSIMD_FEATURE_VALUE( TEST_FEATURE_SET_ACTIVE ) > 0
               |     ^
@@ -10955,10 +10955,10 @@ events:
       stdout: |
         Change Dir: 'E:/Projects/voxl_engine/build/clang-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_2b2ed
-        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=WASM -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_2b2ed.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_2b2ed.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_2b2ed.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
-        FAILED: [code=1] CMakeFiles/cmTC_2b2ed.dir/ArchDetect.cpp.obj 
-        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=WASM -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_2b2ed.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_2b2ed.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_2b2ed.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        Run Build Command(s): C:/Users/gutie/AppData/Local/Microsoft/WinGet/Links/ninja.exe -v cmTC_8d2ab
+        [1/2] C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=WASM -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_8d2ab.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_8d2ab.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_8d2ab.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
+        FAILED: [code=1] CMakeFiles/cmTC_8d2ab.dir/ArchDetect.cpp.obj 
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DTEST_FEATURE_SET_ACTIVE=WASM -D_MBCS  -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_8d2ab.dir/ArchDetect.cpp.obj -MF CMakeFiles\\cmTC_8d2ab.dir\\ArchDetect.cpp.obj.d -o CMakeFiles/cmTC_8d2ab.dir/ArchDetect.cpp.obj -c E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp
         E:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/cmake/ArchDetect.cpp:9:5: error: function-like macro 'FASTSIMD_FEATURE_VALUE_WASM' is not defined
             9 | #if FASTSIMD_FEATURE_VALUE( TEST_FEATURE_SET_ACTIVE ) > 0
               |     ^
@@ -10981,7 +10981,7 @@ events:
       - "external/vcpkg/scripts/buildsystems/vcpkg.cmake:188 (find_program)"
       - "external/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
       - "applications/CMakeLists.txt:2 (add_executable)"
-      - "applications/CMakeLists.txt:7 (voxl_add_app)"
+      - "applications/CMakeLists.txt:13 (voxl_add_app)"
     mode: "program"
     variable: "Z_VCPKG_PWSH_PATH"
     description: "Path to a program."
@@ -11454,7 +11454,7 @@ events:
       - "external/vcpkg/scripts/buildsystems/vcpkg.cmake:193 (find_program)"
       - "external/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
       - "applications/CMakeLists.txt:2 (add_executable)"
-      - "applications/CMakeLists.txt:7 (voxl_add_app)"
+      - "applications/CMakeLists.txt:13 (voxl_add_app)"
     mode: "program"
     variable: "Z_VCPKG_BUILTIN_POWERSHELL_PATH"
     description: "Path to a program."

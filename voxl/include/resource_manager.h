@@ -53,12 +53,11 @@ inline std::shared_ptr<T> ResourceManager::Load(const std::string& name, Args&&.
 template<ResourceType T>
 inline std::shared_ptr<T> ResourceManager::Get(const std::string& name) {
   auto& cache = getCache<T>();
-  if (cache == std::bad_any_cast()) return nullptr;
 
   auto it = cache.find(name);
   if (it == cache.end()) return nullptr;
 
-  return it.second;
+  return it->second;
 }
 
 

@@ -10,23 +10,22 @@
 namespace voxl {
 
 
-struct Handle { uint32_t id = 0; };
+struct GpuHandle { uint32_t id = 0; };
 
 
-struct BufferHandle: public Handle {};
+struct BufferHandle: public GpuHandle {};
 
 
-struct TextureHandle: public Handle {};
+struct TextureHandle: public GpuHandle {};
 
 
-struct MeshHandle: public Handle {};
+struct MeshHandle: public GpuHandle {};
 
 
-struct ShaderHandle: public Handle {};
-struct ShaderProgramHandle: public Handle {};
+struct ShaderProgramHandle: public GpuHandle {};
 
 
-struct MaterialHandle: public Handle {
+struct MaterialHandle: public GpuHandle {
   ShaderProgramHandle shader;
 
   TextureHandle albedoMap;

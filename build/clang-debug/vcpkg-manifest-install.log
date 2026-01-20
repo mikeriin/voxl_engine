@@ -1,6 +1,6 @@
 Detecting compiler hash for triplet x64-windows...
 Compiler found: C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe
-The following packages are already installed:
+The following packages will be built and installed:
   * egl-registry:x64-windows@2025-05-27
     entt:x64-windows@3.16.0
     glad[core,loader]:x64-windows@0.1.36
@@ -10,6 +10,41 @@ The following packages are already installed:
     sdl3:x64-windows@3.4.0
   * vcpkg-cmake:x64-windows@2024-04-23
   * vcpkg-cmake-config:x64-windows@2024-05-23
+Additional packages (*) will be modified to complete this operation.
+Restored 9 package(s) from C:\Users\gutie\AppData\Local\vcpkg\archives in 2.4 s. Use --debug to see more details.
+Installing 1/9 vcpkg-cmake-config:x64-windows@2024-05-23...
+Elapsed time to handle vcpkg-cmake-config:x64-windows: 3.07 ms
+vcpkg-cmake-config:x64-windows package ABI: 3d7b72d519b7e217594dc407cf2d507a09d491f0d2f25c64e1d5fe25cbd573b6
+Installing 2/9 vcpkg-cmake:x64-windows@2024-04-23...
+Elapsed time to handle vcpkg-cmake:x64-windows: 13.8 ms
+vcpkg-cmake:x64-windows package ABI: 27d40963577b11ac1c870e7896870163ed2dc78966354de8a74cceef54b15c4b
+Installing 3/9 entt:x64-windows@3.16.0...
+Elapsed time to handle entt:x64-windows: 22.9 ms
+entt:x64-windows package ABI: b3a00dfa1bd10c6c469a62d0550b177f5c373e35aa833d757d92113be690208c
+Installing 4/9 egl-registry:x64-windows@2025-05-27...
+Elapsed time to handle egl-registry:x64-windows: 15.1 ms
+egl-registry:x64-windows package ABI: 6cd39962ecf39a3f78271e94c5cb755a73a6e3b9559549a1080df4d42e7983cd
+Installing 5/9 opengl-registry:x64-windows@2025-10-23...
+Elapsed time to handle opengl-registry:x64-windows: 15.3 ms
+opengl-registry:x64-windows package ABI: 3879682ce10bc29545cf0b772cf693a901d59150f05fa9bc9a269e1ae12974f1
+Installing 6/9 glad[core,loader]:x64-windows@0.1.36...
+Elapsed time to handle glad:x64-windows: 15.3 ms
+glad:x64-windows package ABI: f2acfc6986e63449039137e24a26fa3b0b6e1966214d06904967b52b1da134fc
+Installing 7/9 glm:x64-windows@1.0.3...
+Elapsed time to handle glm:x64-windows: 168 ms
+glm:x64-windows package ABI: ff50cb6e661c66d9ce2dfa3b76ab09cda93d8e71b3b7e76b7d58bcf0c7259fe0
+Installing 8/9 sdl3:x64-windows@3.4.0...
+Elapsed time to handle sdl3:x64-windows: 25.2 ms
+sdl3:x64-windows package ABI: 79ff3ee44d36fcb8e72aabcafddb3c106171acf8a7864e68e5f862bede7ebd12
+Installing 9/9 imgui[core,opengl3-binding,sdl3-binding]:x64-windows@1.91.9...
+Elapsed time to handle imgui:x64-windows: 16.9 ms
+imgui:x64-windows package ABI: 488ddbe66e448bce3440784a77b9f4c9c1b6daddece4f94a9f570c50e8066f34
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+Apache-2.0
+MIT
+Zlib
 entt provides CMake targets:
 
     find_package(EnTT CONFIG REQUIRED)
@@ -41,4 +76,4 @@ imgui provides CMake targets:
   find_package(imgui CONFIG REQUIRED)
   target_link_libraries(main PRIVATE imgui::imgui)
 
-All requested installations completed successfully in: 471 us
+All requested installations completed successfully in: 309 ms

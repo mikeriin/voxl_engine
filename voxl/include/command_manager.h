@@ -29,6 +29,9 @@ public:
   bool RegisterCommand(std::string name, Command cmd);
   bool ExecuteCommand(std::string_view name, std::span<const std::string_view> args) const;
 
+  std::string Help() const;
+  std::string Helper(std::string_view name) const;
+
 private:
   std::unordered_map<std::string, Command> _commands;
 };

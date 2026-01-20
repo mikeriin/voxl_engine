@@ -776,7 +776,7 @@ build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sa
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
   OBJECT_FILE_DIR = applications\CMakeFiles\sandbox.dir\sandbox
   TARGET_COMPILE_PDB = applications\CMakeFiles\sandbox.dir\
-  TARGET_PDB = applications\sandbox.pdb
+  TARGET_PDB = applications\sandbox\sandbox.pdb
   TARGET_SUPPORT_DIR = applications\CMakeFiles\sandbox.dir
 
 
@@ -785,20 +785,20 @@ build applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj: CXX_COMPILER__sa
 
 
 #############################################
-# Link the executable applications\sandbox.exe
+# Link the executable applications\sandbox\sandbox.exe
 
-build applications/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/glad.lib vcpkg_installed/x64-windows/debug/lib/glm.lib vcpkg_installed/x64-windows/debug/lib/imguid.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib _deps/FastNoise2/src/FastNoiseD.lib || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD voxl/voxl.lib
+build applications/sandbox/sandbox.exe: CXX_EXECUTABLE_LINKER__sandbox_Debug applications/CMakeFiles/sandbox.dir/sandbox/main.cpp.obj | voxl/voxl.lib vcpkg_installed/x64-windows/debug/lib/glad.lib vcpkg_installed/x64-windows/debug/lib/glm.lib vcpkg_installed/x64-windows/debug/lib/imguid.lib vcpkg_installed/x64-windows/debug/lib/SDL3.lib _deps/FastNoise2/src/FastNoiseD.lib || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD voxl/voxl.lib
   CONFIG = Debug
   FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   LINK_FLAGS = -Xlinker /subsystem:console -fuse-ld=lld-link
   LINK_LIBRARIES = voxl/voxl.lib  vcpkg_installed/x64-windows/debug/lib/glad.lib  vcpkg_installed/x64-windows/debug/lib/glm.lib  vcpkg_installed/x64-windows/debug/lib/imguid.lib  vcpkg_installed/x64-windows/debug/lib/SDL3.lib  _deps/FastNoise2/src/FastNoiseD.lib  -lopengl32.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
   OBJECT_DIR = applications\CMakeFiles\sandbox.dir
-  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Projects/voxl_engine/build/clang-debug/applications/sandbox.exe -installedDir E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/debug/bin -OutVariable out"
+  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D E:\Projects\voxl_engine\build\clang-debug\applications && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/Projects/voxl_engine/external/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Projects/voxl_engine/build/clang-debug/applications/sandbox/sandbox.exe -installedDir E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = applications\CMakeFiles\sandbox.dir\
-  TARGET_FILE = applications\sandbox.exe
-  TARGET_IMPLIB = applications\sandbox.lib
-  TARGET_PDB = applications\sandbox.pdb
+  TARGET_FILE = applications\sandbox\sandbox.exe
+  TARGET_IMPLIB = applications\sandbox\sandbox.lib
+  TARGET_PDB = applications\sandbox\sandbox.pdb
   TARGET_SUPPORT_DIR = applications\CMakeFiles\sandbox.dir
 
 
@@ -878,9 +878,9 @@ build FastSIMD: phony _deps/fastsimd-build/FastSIMD
 
 build FastSIMD_FastNoise: phony _deps/FastNoise2/src/FastSIMD_FastNoise
 
-build sandbox: phony applications/sandbox.exe
+build sandbox: phony applications/sandbox/sandbox.exe
 
-build sandbox.exe: phony applications/sandbox.exe
+build sandbox.exe: phony applications/sandbox/sandbox.exe
 
 build voxl: phony voxl/voxl.lib
 
@@ -929,7 +929,7 @@ build _deps/fastsimd-build/dispatch/all: phony
 #############################################
 # Folder: E:/Projects/voxl_engine/build/clang-debug/applications
 
-build applications/all: phony applications/sandbox.exe
+build applications/all: phony applications/sandbox/sandbox.exe
 
 # =============================================================================
 

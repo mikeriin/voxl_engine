@@ -13,6 +13,10 @@
 #include "dev_console.h"
 #include "event.h"
 #include "timestep.h"
+#include "res/shader_program.h"
+
+
+std::string voxl::Loader<voxl::ShaderProgram>::_relativePath = "";
 
 
 double voxl::Timestep::DeltaTime = 0.0;
@@ -147,7 +151,7 @@ void Application::registerCommands() {
 
   // commande print pour gérer plusieurs arguments
   _cmdManager.RegisterCommand("print", Command{
-    .helper = "/print",
+    .helper = "/print <your text to print here>",
     .func = [this](std::span<const std::string_view> args) -> bool {
       if (args.size() == 0) {
         this->_context.pDevConsole->Send(DevConsoleMessage{

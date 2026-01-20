@@ -13,6 +13,7 @@ public:
   virtual ~IRenderDevice() = default;
 
   virtual bool CreateShaderProgram(ShaderProgram* program) = 0;
+  virtual bool ReloadShaderProgram(ShaderProgram* program) = 0;
   virtual void DeleteShaderProgram(ShaderProgram* program) = 0;
 };
 

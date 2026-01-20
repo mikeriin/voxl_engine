@@ -36,8 +36,8 @@ struct ShaderProgramCreateInfo {
 
 
 struct Shader {
-  ShaderHandle handle;
   ShaderType type;
+  std::string path;
   std::string buffer;
 };
 
@@ -54,25 +54,51 @@ struct Loader<ShaderProgram> {
     auto program = std::make_shared<ShaderProgram>();
     
     size_t shader_count = createInfo.shaders.size();
-    program->shaders.resize(shader_count);
+    program->shaders.resize(shader_count, Shader{});
 
     for (size_t i = 0; i < shader_count; i++) {
       const auto& shaderInfo = createInfo.shaders[i];
 
       program->shaders[i].type = shaderInfo.type;
+      program->shaders[i].path = shaderInfo.path;
 
-      auto src = ReadFile(shaderInfo.path);
+      std::string path = _relativePath + shaderInfo.path;
+      auto src = ReadFile(path);
       if (src.empty()) {
-        std::println("{} is empty", shaderInfo.path);
+        std::println("{} is empty", path);
         return nullptr;
       }
       program->shaders[i].buffer = std::move(src);
     }
 
-    std::println("Successfully created cpu side shader program");
-
     return program;
   }
+
+  
+  static bool Reload(ShaderProgram* program) {
+    size_t shader_count = program->shaders.size();
+
+    for (size_t i = 0; i < shader_count; i++) {
+      std::string path = _relativePath + program->shaders[i].path;
+
+      auto src = ReadFile(path);
+      if (src.empty()) {
+        std::println("{} is empty", path);
+        return false;
+      }
+      program->shaders[i].buffer = std::move(src);
+    }
+
+    return true;
+  }
+
+
+  static void DefineRelativePath(const std::string& relative) {
+    _relativePath = relative;
+  }
+
+private:
+  static std::string _relativePath;
 };
 
 

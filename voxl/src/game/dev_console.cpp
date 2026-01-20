@@ -3,7 +3,8 @@
 
 #include <cctype>
 #include <format>
-#include <print>
+#include <span>
+#include <string>
 #include <string_view>
 #include <vector>
 
@@ -26,6 +27,45 @@ int DevConsole::_historyIndex = -1;
 void DevConsole::OnAttach(AppContext& ctx) {
   _pCtx = &ctx;
   ctx.pDevConsole = this;
+
+  _pCtx->pCmdManager->RegisterCommand("clear", Command{
+    .helper = "/clear <amount>",
+    .func = [this](std::span<const std::string_view> args) -> bool {
+      if (args.size() == 0) {
+        _history.clear();
+        return true;
+      }
+
+      if (args.size() != 1) {
+        Send(DevConsoleMessage{
+          .level = DevConsoleMessage::WARNING,
+          .buffer = "Failed to execute /clear: too many arguments, expected 0 or 1."
+        });
+        return false;
+      }
+
+      try {
+        unsigned int to_delete = std::stoi(std::string(args[0]));
+
+        if (to_delete >= _history.size()) {
+          _history.clear();
+          return true;
+        }
+
+        for (size_t i = 0; i < to_delete; i++) {
+          _history.pop_back();
+        }
+      } catch (...) {
+        Send(DevConsoleMessage{
+          .level = DevConsoleMessage::WARNING,
+          .buffer = "Failed to execute /clear: amount must be an integer."
+        });
+        return false;
+      }
+
+      return true;
+    }
+  });
 }
 
 
@@ -62,10 +102,7 @@ void DevConsole::OnUpdate([[maybe_unused]] double dt, [[maybe_unused]] double al
       // on ignore le premier mot.
       std::span<const std::string_view> args(tokens.data() + 1, tokens.size() - 1);
 
-      std::println("{}", args.size());
-
       bool executed = _pCtx->pCmdManager->ExecuteCommand(command_sv, args);
-      if (executed) std::println("Command executed.");
     }
   }
 
