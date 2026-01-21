@@ -1,15 +1,24 @@
 #include "gl_render_device.h"
-#include "gfx/render_types.h"
+#include "gfx/render_pipeline.h"
+#include "gl_render_pipeline.h"
 #include "res/shader_program.h"
 
 
+#include <cassert>
 #include <cstddef>
 #include <glad/glad.h>
+#include <memory>
 #include <print>
+#include <utility>
 #include <vector>
 
 
 namespace voxl {
+
+
+GLRenderDevice::~GLRenderDevice() {
+  _pipelines.clear();
+}
 
 
 bool GLRenderDevice::CreateShaderProgram(ShaderProgram* program) {
@@ -18,7 +27,7 @@ bool GLRenderDevice::CreateShaderProgram(ShaderProgram* program) {
     return false;
   }
 
-  program->handle.id = glCreateProgram();
+  program->handle = glCreateProgram();
   size_t shader_count = program->shaders.size();
   std::vector<unsigned int> shaders(shader_count);
 
@@ -31,24 +40,24 @@ bool GLRenderDevice::CreateShaderProgram(ShaderProgram* program) {
       glDeleteShader(shaders[i]);
       shaders[i] = 0;
     }
-    else glAttachShader(program->handle.id, shaders[i]);
+    else glAttachShader(program->handle, shaders[i]);
   }
 
-  glLinkProgram(program->handle.id);
+  glLinkProgram(program->handle);
 
   int success = 0;
-  glGetProgramiv(program->handle.id, GL_LINK_STATUS, &success);
+  glGetProgramiv(program->handle, GL_LINK_STATUS, &success);
   if (!success) {
     char info_log[512];
-    glGetProgramInfoLog(program->handle.id, 512, nullptr, info_log);
+    glGetProgramInfoLog(program->handle, 512, nullptr, info_log);
     std::println("Failed to link program : {}", info_log);
 
     for (auto& shader : shaders) {
-      glDetachShader(program->handle.id, shader);
+      glDetachShader(program->handle, shader);
       glDeleteShader(shader);
     }
 
-    glDeleteProgram(program->handle.id);
+    glDeleteProgram(program->handle);
 
     std::println("Failed to create gpu side shader program.");
     return false;
@@ -56,7 +65,7 @@ bool GLRenderDevice::CreateShaderProgram(ShaderProgram* program) {
 
   for (size_t i = 0; i < shader_count; i++) {
     if (shaders[i] != 0) {
-      glDetachShader(program->handle.id, shaders[i]);
+      glDetachShader(program->handle, shaders[i]);
       glDeleteShader(shaders[i]);
     }
     program->shaders[i].buffer.clear();
@@ -119,15 +128,30 @@ bool GLRenderDevice::ReloadShaderProgram(ShaderProgram* program) {
     program->shaders[i].buffer.clear();
   }
 
-  program->handle.id = new_program;
-  glDeleteProgram(program->handle.id);
+  program->handle = new_program;
+  glDeleteProgram(program->handle);
 
   return true;
 }
 
 
 void GLRenderDevice::DeleteShaderProgram(ShaderProgram* program) {
-  glDeleteProgram(program->handle.id);
+  glDeleteProgram(program->handle);
+}
+
+
+PipelineHandle GLRenderDevice::CreatePipeline(const PipelineDesc& desc) {
+  std::unique_ptr<IPipeline> pipeline = std::make_unique<GLRenderPipeline>(desc);
+  
+  _pipelines.push_back(std::move(pipeline));
+
+  return static_cast<PipelineHandle>(_pipelines.size() - 1);
+}
+
+
+IPipeline* GLRenderDevice::GetPipeline(PipelineHandle handle) {
+  assert(handle < _pipelines.size()); // TODO! à enlever en release
+  return _pipelines[handle].get();
 }
 
 

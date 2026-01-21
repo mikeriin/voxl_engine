@@ -4,17 +4,41 @@
 
 #include "render_types.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include <variant>
+#include <vector>
 
 
 namespace voxl {
 
 
-struct RenderCommand {
-  MeshHandle mesh;
-  MaterialHandle material;
-  glm::mat4 transform;
-  float distToCamera; // pour le tri, sujet à modifications
+struct CmdSetViewport { 
+  float x;
+  float y;
+  float w;
+  float h; 
 };
+
+
+struct CmdBindPipeline {
+  PipelineHandle handle;
+};
+
+
+using RenderCommand = std::variant<
+  CmdSetViewport,
+  CmdBindPipeline
+>;
+
+
+class CommandBuffer {
+public:
+  void Push(RenderCommand cmd);
+  std::vector<RenderCommand>& GetCommands();
+  void Clear();
+
+private:
+  std::vector<RenderCommand> _commands;
+};  
 
 
 }

@@ -20,9 +20,8 @@ public:
   ~GLRenderer() override;
 
   void BeginFrame() override;
+  void SubmitRenderPass(IRenderDevice* device, CommandBuffer& cmds) override;
   void EndFrame() override;
-
-  IRenderDevice* Device() override;
 
 private:
   struct Impl;

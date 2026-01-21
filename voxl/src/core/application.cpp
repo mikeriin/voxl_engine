@@ -7,6 +7,7 @@
 #include <string>
 #include <utility>
 
+#include "gl_render_device.h"
 #include "sdl_window.h"
 #include "gl_renderer.h"
 #include "command_manager.h"
@@ -17,6 +18,7 @@
 
 
 std::string voxl::Loader<voxl::ShaderProgram>::_relativePath = "";
+std::vector<std::string> voxl::Loader<voxl::ShaderProgram>::_shaderList{};
 
 
 double voxl::Timestep::DeltaTime = 0.0;
@@ -25,24 +27,30 @@ double voxl::Timestep::FixedDeltaTime = 0.0;
 
 // TODO permettre de choisir l'implémentation en dehors de la lib
 std::unique_ptr<voxl::IWindow> CreateWindow(const voxl::WindowDesc& desc) { return std::make_unique<voxl::SDLWindow>(desc); }
-std::unique_ptr<voxl::IRenderer> CreateRenderer(voxl::IWindow* window) { return std::make_unique<voxl::GLRenderer>(window); }
+std::unique_ptr<voxl::IRenderer> CreateGLRenderer(voxl::IWindow* window) { return std::make_unique<voxl::GLRenderer>(window); }
+std::unique_ptr<voxl::IRenderDevice> CreateGLRenderDevice() { return std::make_unique<voxl::GLRenderDevice>(); }
 
 
 namespace voxl {
 
 
-Application::Application(const voxl::WindowDesc &desc)
-  : _pWindow(CreateWindow(desc)),
-    _pRenderer(CreateRenderer(_pWindow.get()))
+Application::Application(const voxl::WindowDesc &desc, GraphicsAPI gfxApi)
+  : _pWindow(CreateWindow(desc))
   {
     if (!_pWindow) _running = false;
     _pWindow->SetEventCallback([this](Event& e) { onEvent(e); });
+
+    if (gfxApi == GraphicsAPI::OpenGL) {
+      _pRenderer = CreateGLRenderer(_pWindow.get());
+      _pDevice = CreateGLRenderDevice();
+    }
     if (!_pRenderer) std::println("Failed to create renderer.");
 
     _timestep.SetFixedDeltaTime(1.0 / 60.0); // 60 mise à jours par secondes ~ 60fps
 
     _context.pWindow = _pWindow.get();
     _context.pRenderer = _pRenderer.get();
+    _context.pDevice = _pDevice.get();
     _context.pResManager = &_resManager;
     _context.pTimestep = &_timestep;
     _context.pLayerStack = &_layerStack;

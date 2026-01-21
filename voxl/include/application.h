@@ -4,6 +4,8 @@
 
 #include <memory>
 
+#include "gfx/render_device.h"
+#include "gfx/render_types.h"
 #include "input.h"
 #include "layer_stack.h"
 #include "resource_manager.h"
@@ -19,6 +21,7 @@ namespace voxl {
 struct AppContext {
   IWindow* pWindow = nullptr;
   IRenderer* pRenderer = nullptr;
+  IRenderDevice* pDevice = nullptr;
   ResourceManager* pResManager = nullptr;
   Timestep* pTimestep = nullptr;
   LayerStack* pLayerStack = nullptr;
@@ -28,9 +31,12 @@ struct AppContext {
 };
 
 
+enum class GraphicsAPI;
+
+
 class Application {
 public:
-  explicit Application(const voxl::WindowDesc &desc);
+  explicit Application(const voxl::WindowDesc &desc, GraphicsAPI gfxApi);
   ~Application() = default;
 
   void Run();
@@ -44,6 +50,7 @@ private:
 
   std::unique_ptr<IWindow> _pWindow;
   std::unique_ptr<IRenderer> _pRenderer;
+  std::unique_ptr<IRenderDevice> _pDevice;
   ResourceManager _resManager;
   Timestep _timestep;
   LayerStack _layerStack;

@@ -9,13 +9,13 @@
 #include <SDL3/SDL_video.h>
 #include <imgui_impl_sdl3.h>
 #include <imgui_impl_opengl3.h>
+#include <variant>
 
-#include "gfx/render_device.h"
+#include "gfx/render_pipeline.h"
+#include "gl_render_pipeline.h"
 #include "window.h"
-#include "gl_render_device.h"
-
-
-std::unique_ptr<voxl::IRenderDevice> CreateRenderDevice() { return std::make_unique<voxl::GLRenderDevice>(); }
+#include "gfx/render_device.h"
+#include "gfx/render_command.h"
 
 
 namespace voxl {
@@ -24,7 +24,6 @@ namespace voxl {
 struct GLRenderer::Impl {
   IWindow* pWindow = nullptr;
   SDL_GLContext glContext = nullptr;
-  std::unique_ptr<IRenderDevice> pRenderDevice = nullptr;
 };
 
 
@@ -48,8 +47,6 @@ GLRenderer::GLRenderer(IWindow* window)
     ImGui_ImplSDL3_InitForOpenGL(static_cast<SDL_Window*>(_impl->pWindow->Handle()), _impl->glContext);
     ImGui_ImplOpenGL3_Init("#version 460");
 
-    _impl->pRenderDevice = CreateRenderDevice();
-
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
   }
 
@@ -72,16 +69,26 @@ void GLRenderer::BeginFrame() {
 }
 
 
+void GLRenderer::SubmitRenderPass(IRenderDevice* device, CommandBuffer& cmds) {
+  for (const auto& cmd : cmds.GetCommands()) {
+    if (std::holds_alternative<CmdBindPipeline>(cmd)) {
+      auto data = std::get<CmdBindPipeline>(cmd);
+
+      IPipeline* pipeline = device->GetPipeline(data.handle);
+      auto* glPipeline = static_cast<GLRenderPipeline*>(pipeline);
+      glPipeline->ApplyState();
+    }
+  }
+
+  cmds.Clear();
+}
+
+
 void GLRenderer::EndFrame() {
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
   SDL_GL_SwapWindow(static_cast<SDL_Window*>(_impl->pWindow->Handle()));
-}
-
-
-IRenderDevice* GLRenderer::Device() {
-  return _impl->pRenderDevice.get();
 }
 
 

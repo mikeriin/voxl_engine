@@ -5,7 +5,7 @@
 
 #include "gfx/render_command.h"
 #include "gfx/render_device.h"
-#include "gfx/render_pass.h"
+#include "gfx/render_pipeline.h"
 #include "gfx/render_types.h"
 #include "gfx/renderer.h"
 
@@ -20,6 +20,7 @@
 #include "keyboard.h"
 #include "layer_stack.h"
 #include "layer.h"
+#include "resource_manager.h"
 #include "timestep.h"
 #include "utils.h"
 #include "window.h"

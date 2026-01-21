@@ -71,6 +71,8 @@ struct Loader<ShaderProgram> {
       program->shaders[i].buffer = std::move(src);
     }
 
+    _shaderList.push_back(createInfo.name);
+
     return program;
   }
 
@@ -97,8 +99,21 @@ struct Loader<ShaderProgram> {
     _relativePath = relative;
   }
 
+  
+  static std::string GetShaderList() {
+    std::string buffer;
+
+    for (const auto& name : _shaderList) 
+      buffer += name + "\n";
+
+    buffer.resize(buffer.size() - 1);
+
+    return buffer;
+  }
+
 private:
   static std::string _relativePath;
+  static std::vector<std::string> _shaderList;
 };
 
 
