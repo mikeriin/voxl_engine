@@ -19,6 +19,8 @@ enum class GraphicsAPI {
 using ShaderProgramHandle = uint32_t;
 using RenderPassHandle = uint32_t;
 using PipelineHandle = uint32_t;
+using BufferHandle = uint32_t;
+using VertexArrayHandle = uint32_t;
 
 
 }

@@ -11,6 +11,7 @@ set(OLD_GLOB
   "E:/Projects/voxl_engine/voxl/src/core/render_command.cpp"
   "E:/Projects/voxl_engine/voxl/src/core/timestep.cpp"
   "E:/Projects/voxl_engine/voxl/src/game/dev_console.cpp"
+  "E:/Projects/voxl_engine/voxl/src/platform/gl/gl_buffer.cpp"
   "E:/Projects/voxl_engine/voxl/src/platform/gl/gl_render_device.cpp"
   "E:/Projects/voxl_engine/voxl/src/platform/gl/gl_render_pipeline.cpp"
   "E:/Projects/voxl_engine/voxl/src/platform/gl/gl_renderer.cpp"

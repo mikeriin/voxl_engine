@@ -10,8 +10,10 @@
 #include <string_view>
 #include <vector>
 
+#include "gfx/buffer.h"
 #include "gfx/render_command.h"
 #include "gfx/render_pipeline.h"
+#include "gfx/render_types.h"
 #include "voxl.h"
 
 
@@ -40,21 +42,13 @@ public:
     std::array<voxl::ShaderCreateInfo, 2> shaders;
     shaders[0] = { .type = voxl::ShaderType::VERTEX, .path = "solid.vert" };
     shaders[1] = { .type = voxl::ShaderType::FRAGMENT, .path = "solid.frag" };
-    voxl::ShaderProgramCreateInfo programInfo{};
-    programInfo.name = "solid";
-    programInfo.shaders = shaders;
+    voxl::ShaderProgramCreateInfo program_info{};
+    program_info.name = "solid";
+    program_info.shaders = shaders;
     voxl::Loader<voxl::ShaderProgram>::DefineRelativePath("assets/shaders/");
-    auto solid_shader_program = _pCtx->pResManager->Load<voxl::ShaderProgram>(programInfo.name, programInfo); // cpu side, reste en cache
+    auto solid_shader_program = _pCtx->pResManager->Load<voxl::ShaderProgram>(program_info.name, program_info); // cpu side, reste en cache
     _pCtx->pDevice->CreateShaderProgram(solid_shader_program.get()); // gpu side
 
-
-    shaders[0] = { .type = voxl::ShaderType::VERTEX, .path = "water.vert" };
-    shaders[1] = { .type = voxl::ShaderType::FRAGMENT, .path = "water.frag" };
-    programInfo.name = "water";
-    programInfo.shaders = shaders;
-    voxl::Loader<voxl::ShaderProgram>::DefineRelativePath("assets/shaders/");
-    auto water_shader_program = _pCtx->pResManager->Load<voxl::ShaderProgram>(programInfo.name, programInfo); // cpu side, reste en cache
-    _pCtx->pDevice->CreateShaderProgram(water_shader_program.get()); // gpu side
 
     _pCtx->pCmdManager->RegisterCommand("reload_shader", voxl::Command{
       .helper = "/reload_shader <name>",
@@ -86,6 +80,8 @@ public:
           });
           return false;
         }
+
+        _pCtx->pDevice->UpdatePipelineShaderProgram(_solidPipelineHandle, shader_to_reload->handle);
 
         _pCtx->pDevConsole->Send(voxl::DevConsoleMessage{
           .level = voxl::DevConsoleMessage::INFO,
@@ -147,36 +143,50 @@ public:
     
     // création du pipeline de rendu pour les objets solides, test
     std::vector<voxl::VertexAttribute> attribs(1);
-    attribs[0] = { voxl::AttribLocation::Position, voxl::AttribFormat::Float3, false };
+    attribs[0] = { voxl::AttribLocation::Position, voxl::AttribFormat::Float3, false, 0 };
 
-    voxl::VertexInputLayout inputLayout{};
-    inputLayout.attributes = std::move(attribs);
-    inputLayout.stride = sizeof(float) * 3; // plus tard ça sera de la taille d'un vertex, pour l'instant position = 3 * float
+    voxl::VertexInputLayout input_layout{};
+    input_layout.attributes = std::move(attribs);
+    input_layout.stride = sizeof(float) * 3; // plus tard ça sera de la taille d'un vertex, pour l'instant position = 3 * float
+    input_layout.binding = 0;
 
     voxl::DepthStencilState depth{};
     depth.enableDepthTest = false;
     depth.enableDepthWrite = false;
 
-    voxl::PipelineDesc pipelineDesc{}; // les autres valeurs sont initialisée par défaut, à voir comment modifier ça si besoin.
-    pipelineDesc.program = solid_shader_program->handle;
-    pipelineDesc.inputLayout = inputLayout;
-    pipelineDesc.depthStencil = depth;
+    voxl::PipelineDesc pipeline_desc{}; // les autres valeurs sont initialisée par défaut, à voir comment modifier ça si besoin.
+    pipeline_desc.program = solid_shader_program->handle;
+    pipeline_desc.inputLayout = input_layout;
+    pipeline_desc.depthStencil = depth;
 
-    _solidPipelineHandle = _pCtx->pDevice->CreatePipeline(pipelineDesc);
+    _solidPipelineHandle = _pCtx->pDevice->CreatePipeline(pipeline_desc);
 
-       
-    voxl::BlendState blend{};
-    blend.enableBlend = true;
 
-    pipelineDesc.program = water_shader_program->handle;
-    pipelineDesc.blend = blend;
+    float vertices[] = {
+      -0.5f, -0.5f, 0.0f,
+       0.5f, -0.5f, 0.0f,
+       0.0f,  0.5f, 0.0f
+    };
 
-    _waterPipelineHandle = _pCtx->pDevice->CreatePipeline(pipelineDesc);
+    voxl::BufferDesc triangle_desc{};
+    triangle_desc.type = voxl::BufferType::Vertex;
+    triangle_desc.usage = voxl::BufferUsage::Dynamic;
+    triangle_desc.size = sizeof(vertices);
+    triangle_desc.data = &vertices[0];
+
+    _triangleVBO = _pCtx->pDevice->CreateBuffer(triangle_desc);
   }
+
+
+  void OnDetach() override {
+    _pCtx->pDevice->DeleteShaderProgram(_pCtx->pResManager->Get<voxl::ShaderProgram>("solid").get());
+  }
+
 
   void OnUpdate(double dt, double alpha) override {
 
   }
+
 
   void OnFixedUpdate(double fixed_dt) override {
     if (_pCtx->pInput->IsKeyPressed(voxl::SCANCODE_Z)) std::println("Z Pressed.");
@@ -184,13 +194,13 @@ public:
     if (_pCtx->pInput->IsKeyReleased(voxl::SCANCODE_Z)) std::println("Z Released.");
   }
 
+
   void OnRender() override {
     voxl::CommandBuffer cmds;
 
     cmds.Push(voxl::CmdBindPipeline{ _solidPipelineHandle });
-    // commandes pour dessiner des objets solides
-    cmds.Push(voxl::CmdBindPipeline{ _waterPipelineHandle });
-    // commandes pour dessiner l'eau et autres objets transparents
+    cmds.Push(voxl::CmdBindVertexBuffer{ _triangleVBO, 0, 0 });
+    cmds.Push(voxl::CmdDraw{ 3 });
 
     _pCtx->pRenderer->SubmitRenderPass(_pCtx->pDevice, cmds);
   }
@@ -199,7 +209,7 @@ private:
   voxl::AppContext* _pCtx = nullptr;
 
   voxl::PipelineHandle _solidPipelineHandle;
-  voxl::PipelineHandle _waterPipelineHandle;
+  voxl::BufferHandle _triangleVBO;
 };
 
 

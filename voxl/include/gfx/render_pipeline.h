@@ -43,7 +43,7 @@ struct BlendState {
 enum AttribLocation {
   Position = 0,
   Normal = 1,
-  UV,
+  UV = 2,
 }; // TODO gérer aussi les tangents, etc...
 
 
@@ -63,11 +63,13 @@ struct VertexAttribute {
   AttribLocation location;
   AttribFormat format;
   bool normalized = false;
+  uint32_t offset;
 };
 
 
 struct VertexInputLayout {
   std::vector<VertexAttribute> attributes;
+  uint32_t binding;
   uint32_t stride;
 };
 

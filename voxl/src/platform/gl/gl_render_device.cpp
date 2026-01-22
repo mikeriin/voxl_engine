@@ -1,7 +1,4 @@
 #include "gl_render_device.h"
-#include "gfx/render_pipeline.h"
-#include "gl_render_pipeline.h"
-#include "res/shader_program.h"
 
 
 #include <cassert>
@@ -11,6 +8,12 @@
 #include <print>
 #include <utility>
 #include <vector>
+
+#include "gfx/buffer.h"
+#include "gfx/render_pipeline.h"
+#include "gl_buffer.h"
+#include "gl_render_pipeline.h"
+#include "res/shader_program.h"
 
 
 namespace voxl {
@@ -128,8 +131,8 @@ bool GLRenderDevice::ReloadShaderProgram(ShaderProgram* program) {
     program->shaders[i].buffer.clear();
   }
 
-  program->handle = new_program;
   glDeleteProgram(program->handle);
+  program->handle = new_program;
 
   return true;
 }
@@ -149,9 +152,30 @@ PipelineHandle GLRenderDevice::CreatePipeline(const PipelineDesc& desc) {
 }
 
 
+void GLRenderDevice::UpdatePipelineShaderProgram(PipelineHandle handle, ShaderProgramHandle program) {
+  auto* pipeline = static_cast<GLRenderPipeline*>(_pipelines[handle].get());
+  pipeline->SetProgram(program);
+}
+
+
 IPipeline* GLRenderDevice::GetPipeline(PipelineHandle handle) {
   assert(handle < _pipelines.size()); // TODO! à enlever en release
   return _pipelines[handle].get();
+}
+
+
+BufferHandle GLRenderDevice::CreateBuffer(const BufferDesc& desc) {
+  std::unique_ptr<IBuffer> buffer = std::make_unique<GLBuffer>(desc);
+
+  _buffers.push_back(std::move(buffer));
+
+  return static_cast<BufferHandle>(_buffers.size() - 1);
+}
+
+
+IBuffer* GLRenderDevice::GetBuffer(BufferHandle handle) {
+  assert(handle < _buffers.size()); // TODO! à enlever en release
+  return _buffers[handle].get();
 }
 
 

@@ -12,7 +12,6 @@ namespace voxl {
 
 class GLRenderDevice final: public IRenderDevice {
 public:
-  GLRenderDevice() = default;
   ~GLRenderDevice();
 
   bool CreateShaderProgram(ShaderProgram* program) override;
@@ -20,7 +19,11 @@ public:
   void DeleteShaderProgram(ShaderProgram* program) override;
 
   PipelineHandle CreatePipeline(const PipelineDesc& desc) override;
+  void UpdatePipelineShaderProgram(PipelineHandle handle, ShaderProgramHandle program) override;
   IPipeline* GetPipeline(PipelineHandle handle) override;
+
+  BufferHandle CreateBuffer(const BufferDesc& desc) override;
+  IBuffer* GetBuffer(BufferHandle handle) override;
 
 private:
   unsigned int getShaderType(const ShaderType& type);

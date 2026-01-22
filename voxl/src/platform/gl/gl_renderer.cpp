@@ -1,21 +1,29 @@
 #include "gl_renderer.h"
 
 
-#include <imgui.h>
 #include <memory>
 #include <stdexcept>
+#include <variant>
+#include <iostream>
 
 #include <glad/glad.h>
 #include <SDL3/SDL_video.h>
 #include <imgui_impl_sdl3.h>
 #include <imgui_impl_opengl3.h>
-#include <variant>
+#include <imgui.h>
 
+#include "gfx/buffer.h"
 #include "gfx/render_pipeline.h"
+#include "gl_buffer.h"
 #include "gl_render_pipeline.h"
 #include "window.h"
 #include "gfx/render_device.h"
 #include "gfx/render_command.h"
+
+
+static void APIENTRY GLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam) {
+  std::cerr << "[GL] type=0x" << std::hex << type << " severity=0x" << severity << " id=" << std::dec << id << " msg=" << message << "\n";
+}
 
 
 namespace voxl {
@@ -24,6 +32,7 @@ namespace voxl {
 struct GLRenderer::Impl {
   IWindow* pWindow = nullptr;
   SDL_GLContext glContext = nullptr;
+  GLRenderPipeline* pCurrentPipeline = nullptr;
 };
 
 
@@ -44,10 +53,19 @@ GLRenderer::GLRenderer(IWindow* window)
     if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress))
       throw std::runtime_error("Failed to load GL.\n");
 
+    glEnable(GL_DEBUG_OUTPUT);
+    glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+    glDebugMessageCallback(GLDebugCallback, nullptr);
+    glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
+    glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DEBUG_SEVERITY_LOW, 0, nullptr, GL_FALSE);
+    glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DEBUG_SEVERITY_NOTIFICATION, 0, nullptr, GL_FALSE);
+
     ImGui_ImplSDL3_InitForOpenGL(static_cast<SDL_Window*>(_impl->pWindow->Handle()), _impl->glContext);
     ImGui_ImplOpenGL3_Init("#version 460");
 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+    glViewport(0, 0, _impl->pWindow->Width(), _impl->pWindow->Height());
   }
 
 
@@ -71,12 +89,38 @@ void GLRenderer::BeginFrame() {
 
 void GLRenderer::SubmitRenderPass(IRenderDevice* device, CommandBuffer& cmds) {
   for (const auto& cmd : cmds.GetCommands()) {
-    if (std::holds_alternative<CmdBindPipeline>(cmd)) {
-      auto data = std::get<CmdBindPipeline>(cmd);
-
-      IPipeline* pipeline = device->GetPipeline(data.handle);
+    if (auto* data = std::get_if<CmdBindPipeline>(&cmd)) {
+      IPipeline* pipeline = device->GetPipeline(data->handle);
       auto* glPipeline = static_cast<GLRenderPipeline*>(pipeline);
       glPipeline->ApplyState();
+
+      _impl->pCurrentPipeline = glPipeline;
+
+      glBindVertexArray(_impl->pCurrentPipeline->GetVAO());
+    }
+    else if (auto* data = std::get_if<CmdBindVertexBuffer>(&cmd)) {
+      IBuffer* buffer = device->GetBuffer(data->handle);
+      auto* glBuffer = static_cast<GLBuffer*>(buffer);
+
+      glVertexArrayVertexBuffer(
+        _impl->pCurrentPipeline->GetVAO(), 
+        data->binding, 
+        glBuffer->GetID(), 
+        data->offset, 
+        _impl->pCurrentPipeline->GetStride()
+      );
+    }
+    else if (auto* data = std::get_if<CmdBindIndexBuffer>(&cmd)) {
+      IBuffer* buffer = device->GetBuffer(data->handle);
+      auto* glBuffer = static_cast<GLBuffer*>(buffer);
+
+      glVertexArrayElementBuffer(_impl->pCurrentPipeline->GetVAO(), glBuffer->GetID());
+    }
+    else if (auto* data = std::get_if<CmdDraw>(&cmd)) {
+      glDrawArrays(_impl->pCurrentPipeline->GetTopology(), 0, data->vertexCount);
+    }
+    else if (auto* data = std::get_if<CmdDrawElements>(&cmd)) {
+      glDrawElements(_impl->pCurrentPipeline->GetTopology(), data->indexCount, GL_UNSIGNED_INT, nullptr);
     }
   }
 

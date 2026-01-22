@@ -39,6 +39,9 @@ SDLWindow::SDLWindow(const WindowDesc& desc)
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
+    // TODO! à enlever pour la release
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);
+
     SDL_WindowFlags window_flags = static_cast<SDL_WindowFlags>(0);
     window_flags |= SDL_WINDOW_RESIZABLE;
     window_flags |= SDL_WINDOW_OPENGL;
