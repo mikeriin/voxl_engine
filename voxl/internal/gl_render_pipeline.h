@@ -19,14 +19,16 @@ public:
   ~GLRenderPipeline() override;
 
   void ApplyState();
-  void SetProgram(ShaderProgramHandle handle);
+  void SetProgram(ProgramHandle handle);
 
   VertexArrayHandle GetVAO() const;
+  ProgramHandle GetProgramHandle() const;
   size_t GetStride() const;
   uint32_t GetTopology() const;
 
 private:
   PipelineDesc _storedDesc;
+  ProgramHandle _programHandle;
   VertexArrayHandle _vaoID;
   uint32_t _primitiveTopology;
 

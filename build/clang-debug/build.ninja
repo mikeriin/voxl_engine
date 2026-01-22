@@ -216,6 +216,18 @@ build voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_buffer.cpp.obj: CXX_COMPILER__
   TARGET_PDB = voxl\voxl.pdb
   TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
 
+build voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_program.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/gl/gl_program.cpp || cmake_object_order_depends_target_voxl
+  CONFIG = Debug
+  DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
+  DEP_FILE = voxl\CMakeFiles\voxl.dir\src\platform\gl\gl_program.cpp.obj.d
+  FLAGS = -O0 -g -Xclang -gcodeview -std=gnu++23 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
+  INCLUDES = -IE:/Projects/voxl_engine/voxl/include -IE:/Projects/voxl_engine/voxl/internal -IE:/Projects/voxl_engine/external/FastNoise2/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/fastsimd-src/include -IE:/Projects/voxl_engine/build/clang-debug/_deps/FastNoise2/src/fastsimd/FastSIMD_FastNoise/include -isystem E:/Projects/voxl_engine/build/clang-debug/vcpkg_installed/x64-windows/include
+  OBJECT_DIR = voxl\CMakeFiles\voxl.dir
+  OBJECT_FILE_DIR = voxl\CMakeFiles\voxl.dir\src\platform\gl
+  TARGET_COMPILE_PDB = voxl\CMakeFiles\voxl.dir\voxl.pdb
+  TARGET_PDB = voxl\voxl.pdb
+  TARGET_SUPPORT_DIR = voxl\CMakeFiles\voxl.dir
+
 build voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_render_device.cpp.obj: CXX_COMPILER__voxl_unscanned_Debug E$:/Projects/voxl_engine/voxl/src/platform/gl/gl_render_device.cpp || cmake_object_order_depends_target_voxl
   CONFIG = Debug
   DEFINES = -DFASTNOISE_STATIC_LIB -DFASTSIMD_IS_RELAXED=1 -DFASTSIMD_STATIC_LIB
@@ -272,7 +284,7 @@ build voxl/CMakeFiles/voxl.dir/src/platform/sdl/sdl_window.cpp.obj: CXX_COMPILER
 #############################################
 # Link the static library voxl\voxl.lib
 
-build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/command_manager.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/input.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/render_command.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj voxl/CMakeFiles/voxl.dir/src/game/dev_console.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_buffer.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_render_device.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_render_pipeline.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_renderer.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/sdl/sdl_window.cpp.obj || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD
+build voxl/voxl.lib: CXX_STATIC_LIBRARY_LINKER__voxl_Debug voxl/CMakeFiles/voxl.dir/src/core/application.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/command_manager.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/input.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/layer_stack.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/render_command.cpp.obj voxl/CMakeFiles/voxl.dir/src/core/timestep.cpp.obj voxl/CMakeFiles/voxl.dir/src/game/dev_console.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_buffer.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_program.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_render_device.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_render_pipeline.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/gl/gl_renderer.cpp.obj voxl/CMakeFiles/voxl.dir/src/platform/sdl/sdl_window.cpp.obj || _deps/FastNoise2/src/FastNoiseD.lib _deps/FastNoise2/src/FastSIMD_FastNoise _deps/fastsimd-build/FastSIMD
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   OBJECT_DIR = voxl\CMakeFiles\voxl.dir

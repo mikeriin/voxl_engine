@@ -15,6 +15,8 @@ public:
 
   uint32_t GetID() const;
 
+  void Delete() const;
+
 private:
   uint32_t _id;
 };

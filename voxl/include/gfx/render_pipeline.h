@@ -44,6 +44,7 @@ enum AttribLocation {
   Position = 0,
   Normal = 1,
   UV = 2,
+  Color = 3,
 }; // TODO gérer aussi les tangents, etc...
 
 
@@ -75,7 +76,7 @@ struct VertexInputLayout {
 
 
 struct PipelineDesc {
-  ShaderProgramHandle program;
+  ProgramHandle program;
 
   VertexInputLayout inputLayout;
   RasterizerState rasterizer;

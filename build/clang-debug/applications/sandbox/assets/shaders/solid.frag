@@ -4,6 +4,11 @@
 out vec4 FragColor;
 
 
+in VERT_OUT {
+  vec3 color;
+} frag;
+
+
 void main() {
-  FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+  FragColor = vec4(frag.color, 1.0);
 }

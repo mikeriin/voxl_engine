@@ -15,6 +15,7 @@ GLRenderPipeline::GLRenderPipeline(const PipelineDesc& desc) {
   _storedDesc = desc;
   
   _primitiveTopology = getGLTopology(_storedDesc.topology);
+  _programHandle = desc.program;
 
   glCreateVertexArrays(1, &_vaoID);
 
@@ -41,8 +42,6 @@ GLRenderPipeline::~GLRenderPipeline() {
 
 
 void GLRenderPipeline::ApplyState() {
-  glUseProgram(_storedDesc.program);
-
   if (_storedDesc.depthStencil.enableDepthTest) glEnable(GL_DEPTH_TEST);
   else glDisable(GL_DEPTH_TEST);
 
@@ -64,13 +63,18 @@ void GLRenderPipeline::ApplyState() {
 }
 
 
-void GLRenderPipeline::SetProgram(ShaderProgramHandle handle) {
+void GLRenderPipeline::SetProgram(ProgramHandle handle) {
   _storedDesc.program = handle;
 }
 
 
 VertexArrayHandle GLRenderPipeline::GetVAO() const {
   return _vaoID;
+}
+
+
+ProgramHandle GLRenderPipeline::GetProgramHandle() const {
+  return _programHandle;
 }
 
 

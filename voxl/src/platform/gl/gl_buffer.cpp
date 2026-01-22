@@ -30,4 +30,9 @@ uint32_t GLBuffer::GetID() const {
 }
 
 
+void GLBuffer::Delete() const {
+  glDeleteBuffers(1, &_id);
+}
+
+
 }

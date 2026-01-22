@@ -6,10 +6,9 @@
 #include <memory>
 
 #include "gfx/buffer.h"
+#include "gfx/program.h"
 #include "gfx/render_pipeline.h"
 #include "gfx/render_types.h"
-#include "render_types.h"
-#include "res/shader_program.h"
 
 
 namespace voxl {
@@ -19,19 +18,18 @@ class IRenderDevice {
 public: 
   virtual ~IRenderDevice() = default;
 
-  virtual bool CreateShaderProgram(ShaderProgram* program) = 0;
-  virtual bool ReloadShaderProgram(ShaderProgram* program) = 0;
-  virtual void DeleteShaderProgram(ShaderProgram* program) = 0;
-
   virtual PipelineHandle CreatePipeline(const PipelineDesc& desc) = 0;
-  virtual void UpdatePipelineShaderProgram(PipelineHandle handle, ShaderProgramHandle program) = 0;
   virtual IPipeline* GetPipeline(PipelineHandle handle) = 0;
+
+  virtual ProgramHandle CreateProgram(ProgramDesc& desc) = 0;
+  virtual IProgram* GetProgram(ProgramHandle handle) = 0;
 
   virtual BufferHandle CreateBuffer(const BufferDesc& desc) = 0;
   virtual IBuffer* GetBuffer(BufferHandle handle) = 0;
 
 protected:
   std::vector<std::unique_ptr<IPipeline>> _pipelines;
+  std::vector<std::unique_ptr<IProgram>> _programs;
   std::vector<std::unique_ptr<IBuffer>> _buffers;
 };
 

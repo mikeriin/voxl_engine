@@ -16,7 +16,7 @@ enum class GraphicsAPI {
   DirectX12
 };
 
-using ShaderProgramHandle = uint32_t;
+using ProgramHandle = uint32_t;
 using RenderPassHandle = uint32_t;
 using PipelineHandle = uint32_t;
 using BufferHandle = uint32_t;

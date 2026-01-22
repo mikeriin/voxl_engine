@@ -13,8 +13,10 @@
 #include <imgui.h>
 
 #include "gfx/buffer.h"
+#include "gfx/program.h"
 #include "gfx/render_pipeline.h"
 #include "gl_buffer.h"
+#include "gl_program.h"
 #include "gl_render_pipeline.h"
 #include "window.h"
 #include "gfx/render_device.h"
@@ -96,6 +98,10 @@ void GLRenderer::SubmitRenderPass(IRenderDevice* device, CommandBuffer& cmds) {
 
       _impl->pCurrentPipeline = glPipeline;
 
+      IProgram* program = device->GetProgram(_impl->pCurrentPipeline->GetProgramHandle());
+      auto* gl_program = static_cast<GLProgram*>(program);
+
+      glUseProgram(gl_program->GetID());
       glBindVertexArray(_impl->pCurrentPipeline->GetVAO());
     }
     else if (auto* data = std::get_if<CmdBindVertexBuffer>(&cmd)) {

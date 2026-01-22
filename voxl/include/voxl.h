@@ -10,7 +10,7 @@
 #include "gfx/renderer.h"
 
 #include "res/resource.h"
-#include "res/shader_program.h"
+#include "res/shader.h"
 
 #include "application.h"
 #include "command_manager.h"

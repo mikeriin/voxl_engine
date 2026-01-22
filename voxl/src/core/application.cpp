@@ -8,17 +8,16 @@
 #include <utility>
 
 #include "gl_render_device.h"
+#include "res/shader.h"
 #include "sdl_window.h"
 #include "gl_renderer.h"
 #include "command_manager.h"
 #include "dev_console.h"
 #include "event.h"
 #include "timestep.h"
-#include "res/shader_program.h"
 
 
-std::string voxl::Loader<voxl::ShaderProgram>::_relativePath = "";
-std::vector<std::string> voxl::Loader<voxl::ShaderProgram>::_shaderList{};
+std::string voxl::Loader<voxl::Shader>::_relativePath = "";
 
 
 double voxl::Timestep::DeltaTime = 0.0;
